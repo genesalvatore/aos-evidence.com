@@ -737,7 +737,8 @@ a:hover {
 .timeline-title {
     color: var(--gray-900);
     margin-bottom: var(--space-xs);
-    margin-top: 2rem;
+    margin-top: 3rem;
+    font-weight: 600;
 }
 
 .timeline-desc {

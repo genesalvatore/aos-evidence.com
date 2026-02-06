@@ -311,7 +311,7 @@ What tonight's work enables:
 
 All evidence from tonight's audit is permanently anchored:
 
-**Git Repository:** `aos-core` (genesalvatore/silas-salvatore)  
+**Git Repository:** `aos-evidence.com` (genesalvatore/aos-evidence.com)  
 **Initial Commit:** `8c685ee` (12 files, 9,323 insertions)  
 **Correction Commit:** `aaffd3c` (accurate AI identification)  
 **Evidence Path:** `EVIDENCE/chatgpt_security_audit_feb_5_2026/`  
@@ -493,7 +493,7 @@ We didn't just talk about AI safety. We built it, audited it, and anchored the e
 ## Contact and Verification
 
 **Documentation:** aos-constitution.com (publishing February 12, 2026)  
-**Source Code:** github.com/genesalvatore/silas-salvatore  
+**Source Code:** github.com/genesalvatore/aos-evidence.com  
 **Evidence:** Commit hash `aaffd3c` in aos-core repository  
 **Discussion:** [To be announced with public launch]  
 

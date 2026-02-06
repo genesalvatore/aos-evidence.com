@@ -455,7 +455,7 @@ Includes: resource budgets, documentation clarity, platform assumptions, canonic
 
 **Full audit transcript:** Commit aaffd3c in aos-core repository  
 **Documentation:** aos-constitution.com (publishing Feb 12, 2026)  
-**Source code:** github.com/genesalvatore/silas-salvatore  
+**Source code:** github.com/genesalvatore/aos-evidence.com  
 **Bypass tests:** Publishing February 8, 2026  
 
 ---
