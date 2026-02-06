@@ -1,0 +1,92 @@
+# Netlify Configuration for AOS Evidence Repository
+# Documentation: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # No build command needed - we build locally with node build.js
+  publish = "."
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Content Security Policy - Allow self-hosted assets and Matomo analytics
+    Content-Security-Policy = """
+      default-src 'self'; 
+      script-src 'self' 'unsafe-inline' https://analytics.git-cathedral.com; 
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+      font-src 'self' https://fonts.gstatic.com; 
+      img-src 'self' data: https:; 
+      connect-src 'self' https://analytics.git-cathedral.com; 
+      frame-ancestors 'none'; 
+      base-uri 'self'; 
+      form-action 'self';
+    """
+    
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    
+    # Caching
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Cache static assets longer
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files - shorter cache
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Clean URLs - serve HTML without .html extension
+[[redirects]]
+  from = "/ABOUT"
+  to = "/ABOUT.html"
+  status = 200
+
+[[redirects]]
+  from = "/VERIFICATION"
+  to = "/VERIFICATION.html"
+  status = 200
+
+[[redirects]]
+  from = "/PRIVACY"
+  to = "/PRIVACY.html"
+  status = 200
+
+[[redirects]]
+  from = "/TERMS"
+  to = "/TERMS.html"
+  status = 200
+
+[[redirects]]
+  from = "/COOKIE_POLICY"
+  to = "/COOKIE_POLICY.html"
+  status = 200
+
+# Redirect www to naked domain
+[[redirects]]
+  from = "https://www.aos-evidence.com/*"
+  to = "https://aos-evidence.com/:splat"
+  status = 301
+  force = true
+
+# 404 page
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
