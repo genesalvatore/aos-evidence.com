@@ -162,7 +162,7 @@ git verify-commit <commit-hash>
 ### For Questions About This Evidence
 
 **Email:** [Contact information available February 12, 2026]  
-**Website:** [aos-constitution.com](https://aos-constitution.com) (launches February 12)  
+**Website:** [aos-constitution.com](https://aos-constitution.com)  
 **GitHub:** [@genesalvatore](https://github.com/genesalvatore)  
 
 ### For Licensing Inquiries

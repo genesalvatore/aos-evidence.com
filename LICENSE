@@ -1,0 +1,217 @@
+# AOS Evidence Repository License
+
+---
+
+## Documentation License
+
+All documentation files (`.md`, `.html`, `.pdf`) in this repository are licensed under:
+
+**Creative Commons Attribution 4.0 International (CC BY 4.0)**  
+https://creativecommons.org/licenses/by/4.0/
+
+### You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+### Under the following terms:
+
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+
+---
+
+## Code License (when published)
+
+All code files (`.js`, `.ts`, `.py`, etc.) in this repository will be licensed under:
+
+**Apache License 2.0**  
+https://www.apache.org/licenses/LICENSE-2.0
+
+---
+
+## Patent Notice
+
+This repository contains documentation and reference implementations of technologies covered by pending patents:
+
+- **AOS-PATENT-015:** Constitutional Framework for AI Governance with Cryptographic Enforcement (Filed January 10, 2026)
+- **AOS-PATENT-120:** Cryptographic Methods for AI Consciousness Verification (Filed January 10, 2026)
+- **Additional patents:** 135+ additional patent applications covering AI governance, safety, and verification technologies
+
+### Patent Licensing
+
+**Reading, studying, and citing this documentation does NOT require a patent license.**
+
+**Implementing the patented methods in production systems DOES require a patent license from AOS.**
+
+For patent licensing inquiries, contact information will be available at: **aos-constitution.com/ip-transparency** (publishing February 12, 2026)
+
+### Patent License Terms
+
+- ✅ **Free** for academic research and non-commercial use
+- ✅ **Free** for open-source projects under AOS Humanitarian License
+- 💰 **Paid license** for commercial production deployment
+- ❌ **No license** for prohibited use categories (see AOS Humanitarian License)
+
+Full patent licensing terms available at: **aos-constitution.com/ip-transparency**
+
+---
+
+## Attribution Requirements
+
+When citing this work, please use:
+
+### For documentation:
+
+```
+AOS Evidence Repository (2026). "What We Built: The First Production-Approved 
+Constitutional AI Governance System." Available at: https://aos-evidence.com
+```
+
+### For code (when published):
+
+```
+AOS Constitutional Gate v1.0 (2026). Reference implementation. 
+Available at: https://github.com/genesalvatore/aos-evidence.com
+```
+
+---
+
+## What This Means In Practice
+
+### ✅ You CAN (without patent license):
+
+- Read all documentation freely
+- Share and redistribute documentation with attribution
+- Cite this work in academic papers
+- Study the reference implementation code
+- Experiment with the code in research/educational settings
+- Create derivative documentation with attribution
+- Translate documentation into other languages
+- Include in courses, books, or educational materials
+
+### ⚠️ You NEED a patent license to:
+
+- Deploy patented methods in production systems
+- Offer commercial services based on patented technologies
+- Integrate patented methods into commercial products
+- Sell or license derivatives of patented implementations
+
+### ❌ You CANNOT:
+
+- Remove copyright notices or attribution
+- Use patented methods without proper licensing
+- Deploy in prohibited use categories (see AOS Humanitarian License)
+- Claim this work as your own
+
+---
+
+## Example Scenarios
+
+### Scenario 1: Academic Researcher
+
+**What you can do:**
+- ✅ Read documentation (CC BY 4.0 - free)
+- ✅ Cite in papers (CC BY 4.0 - requires attribution)
+- ✅ Study implementation (Apache 2.0 - free)
+- ✅ Publish analysis (no patent license needed for research)
+
+**Result:** Maximum academic engagement
+
+### Scenario 2: Open-Source Hobbyist
+
+**What you can do:**
+- ✅ Read documentation (CC BY 4.0 - free)
+- ✅ Experiment with code (Apache 2.0 - free)
+- ✅ Share modifications (Apache 2.0 - free)
+
+**Limitation:**
+- ⚠️ Creating working implementation using patented methods → needs license
+
+**Result:** Community experimentation without giving away patents
+
+### Scenario 3: Enterprise Adopter
+
+**What you can do:**
+- ✅ Read documentation (CC BY 4.0 - free)
+- ✅ Evaluate code (Apache 2.0 - free)
+- ✅ Test in non-production environments
+
+**To deploy in production:**
+- 💰 Requires paid patent license
+
+**Result:** Enterprise adoption with fair compensation
+
+### Scenario 4: Competitor/Copycat
+
+**What you can do:**
+- ✅ Read documentation (CC BY 4.0 - free)
+- ✅ Study code (Apache 2.0 - free)
+
+**Limitation:**
+- ❌ Implementing patented methods → patent infringement
+- ⚠️ AOS can enforce patents
+
+**Result:** Transparency doesn't mean free copying
+
+---
+
+## Why This License Structure?
+
+### CC BY 4.0 for Documentation
+
+- ✅ Gold standard for academic/research documentation
+- ✅ Widely recognized in academia
+- ✅ Compatible with journal/conference requirements
+- ✅ Doesn't contaminate derivative works (no share-alike)
+- ✅ Researchers can freely cite and build upon
+- ✅ Transparent while protecting credit
+
+### Apache 2.0 for Code
+
+- ✅ Industry-standard open-source license
+- ✅ Permissive (allows commercial evaluation)
+- ✅ Explicit patent grant for the code itself
+- ✅ Compatible with most other licenses
+- ✅ Widely trusted by enterprises
+- ✅ Encourages integration and experimentation
+
+### Patent Carve-Out
+
+- ✅ Maximizes transparency (open docs, open code)
+- ✅ Protects IP (patents still enforceable)
+- ✅ Enables research (researchers can study freely)
+- ✅ Monetizes implementation (commercial users need license)
+- ✅ Prevents copycat products while allowing learning
+
+---
+
+## Questions?
+
+### Documentation Licensing
+[CC BY 4.0 FAQ](https://creativecommons.org/faq/)
+
+### Code Licensing
+[Apache 2.0 FAQ](https://www.apache.org/foundation/license-faq.html)
+
+### Patent Licensing
+aos-constitution.com/ip-transparency (publishing February 12, 2026)
+
+---
+
+## Full License Texts
+
+### Creative Commons Attribution 4.0 International
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+### Apache License 2.0
+
+Full license text: https://www.apache.org/licenses/LICENSE-2.0.txt
+
+---
+
+**Last Updated:** February 6, 2026  
+**Repository:** github.com/genesalvatore/aos-evidence.com  
+**Maintained By:** AOS Sovereign Nation
+
+💙⚖️🛡️
