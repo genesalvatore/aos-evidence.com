@@ -45,6 +45,7 @@ function trackEvent(category, action, name, value) {
 
 class CookieConsent {
     constructor() {
+        this.STORAGE_KEY = 'aos_evidence_consent';
         this.COOKIE_NAME = 'aos_evidence_consent';
         this.COOKIE_EXPIRY = 365; // days
 
@@ -52,16 +53,34 @@ class CookieConsent {
     }
 
     init() {
-        // Check if consent already given
-        if (!this.hasConsent()) {
+        // Check if consent already given (localStorage or cookie)
+        const consent = this.getConsent();
+        if (consent === null) {
+            // No decision made yet
             this.showBanner();
-        } else {
+        } else if (consent === true) {
+            // User accepted
             this.enableAnalytics();
+        } else {
+            // User declined
+            this.disableAnalytics();
         }
     }
 
-    hasConsent() {
-        return this.getCookie(this.COOKIE_NAME) === 'true';
+    getConsent() {
+        // Try localStorage first (more reliable)
+        const stored = localStorage.getItem(this.STORAGE_KEY);
+        if (stored !== null) {
+            return stored === 'true';
+        }
+
+        // Fallback to cookie
+        const cookie = this.getCookie(this.COOKIE_NAME);
+        if (cookie !== null) {
+            return cookie === 'true';
+        }
+
+        return null; // No decision made
     }
 
     showBanner() {
@@ -74,7 +93,7 @@ class CookieConsent {
                     <p>We use Matomo analytics (self-hosted, privacy-respecting) to understand how our evidence is accessed. No third-party tracking. <a href="PRIVACY.html">Privacy Policy</a></p>
                 </div>
                 <div class="cookie-buttons">
-                    <button class="btn-accept" onclick="cookieConsent.accept()">Accept</button>
+                    <button class="btn-accept" onclick="cookieConsent.accept()">Accept Analytics</button>
                     <button class="btn-decline" onclick="cookieConsent.decline()">Decline</button>
                 </div>
             </div>
@@ -86,16 +105,30 @@ class CookieConsent {
     }
 
     accept() {
-        this.setCookie(this.COOKIE_NAME, 'true', this.COOKIE_EXPIRY);
+        this.saveConsent(true);
         this.enableAnalytics();
         this.hideBanner();
         trackEvent('Cookie Consent', 'Accept', 'User accepted analytics');
     }
 
     decline() {
-        this.setCookie(this.COOKIE_NAME, 'false', this.COOKIE_EXPIRY);
+        this.saveConsent(false);
         this.disableAnalytics();
         this.hideBanner();
+    }
+
+    saveConsent(accepted) {
+        const value = accepted ? 'true' : 'false';
+
+        // Save to localStorage (primary)
+        try {
+            localStorage.setItem(this.STORAGE_KEY, value);
+        } catch (e) {
+            console.warn('localStorage not available:', e);
+        }
+
+        // Save to cookie (fallback)
+        this.setCookie(this.COOKIE_NAME, value, this.COOKIE_EXPIRY);
     }
 
     hideBanner() {
@@ -110,12 +143,14 @@ class CookieConsent {
         // Matomo is already loaded, just ensure tracking is enabled
         if (window._paq) {
             window._paq.push(['setConsentGiven']);
+            window._paq.push(['setCookieConsentGiven']);
         }
     }
 
     disableAnalytics() {
         if (window._paq) {
             window._paq.push(['forgetConsentGiven']);
+            window._paq.push(['deleteCookies']);
         }
     }
 
