@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About AOS Evidence Repository | AOS Evidence Repository</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #0891b2;
+            --success: #10b981;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-sans); color: var(--gray-900); background: var(--gray-50); line-height: 1.6; }
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-md);}
+        
+        /* Navigation */
+        .navbar{background:white;border-bottom:1px solid var(--gray-200);padding:1rem 0;position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);}
+        .logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;color:var(--gray-900);font-size:1.1rem;text-decoration:none;}
+        .logo svg{color:var(--primary);}
+        .nav-links{display:flex;align-items:center;gap:var(--space-md);flex-wrap:wrap;}
+        .nav-link{color:var(--gray-700);font-weight:500;text-decoration:none;padding:0.5rem 0;transition:color 0.2s;}
+        .nav-link:hover{color:var(--primary);}
+        .btn-github{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gray-900);color:white;padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600;text-decoration:none;transition:transform 0.2s;}
+        .btn-github:hover{transform:translateY(-2px);}
+        
+        /* Footer */
+        .footer{background:var(--gray-900);color:white;padding:var(--space-xl) 0 var(--space-md);}
+        .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--space-xl);margin-bottom:var(--space-lg);}
+        .footer-section h4{color:white;margin-bottom:var(--space-md);}
+        .footer-title{font-size:1.1rem;font-weight:700;color:white;}
+        .footer-text{font-size:0.9375rem;line-height:1.7;opacity:0.9;margin-bottom:var(--space-sm);}
+        .footer-text-small{font-size:0.875rem;opacity:0.7;}
+        .footer-badge{display:inline-block;font-size:1.5rem;margin-top:var(--space-sm);}
+        .footer-links{list-style:none;}
+        .footer-links li{margin-bottom:0.5rem;}
+        .footer-links a{color:rgba(255,255,255,0.9);text-decoration:none;transition:color 0.2s;}
+        .footer-links a:hover{color:white;text-decoration:underline;}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:var(--space-sm);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-sm);}
+        .footer-copyright,.footer-updated{font-size:0.875rem;opacity:0.7;}
+        .footer-copyright a{color:inherit;}
+        
+        /* Page Styles */
+        .document-page { background: var(--gray-50); min-height: 100vh; display: flex; flex-direction: column; }
+        .doc-content { background: white; max-width: 900px; margin: 2rem auto; padding: 3rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); line-height: 1.7; flex: 1; }
+        .doc-content h1 { color: #2563eb; margin-top: 2rem; padding-bottom: 0.5rem; border-bottom: 3px solid #2563eb; }
+        .doc-content h2 { color: #111827; margin-top: 1.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #e5e7eb; }
+        .doc-content h3 { color: #374151; margin-top: 1rem; }
+        .doc-content p { margin-bottom: 1rem; color: #374151; }
+        .doc-content ul, .doc-content ol { margin-bottom: 1rem; padding-left: 2rem; }
+        .doc-content li { margin-bottom: 0.5rem; color: #374151; }
+        .doc-content code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; color: #2563eb; }
+        .doc-content pre { background: #111827; color: #00ff00; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+        .doc-content pre code { background: none; color: inherit; padding: 0; }
+        .doc-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .doc-content th, .doc-content td { padding: 0.75rem; border: 1px solid #d1d5db; text-align: left; }
+        .doc-content th { background: #f3f4f6; font-weight: 600; }
+        .doc-content blockquote { border-left: 4px solid #2563eb; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #4b5563; }
+        .doc-content hr { border: none; border-top: 2px solid #e5e7eb; margin: 2rem 0; }
+        .doc-content a { color: #2563eb; text-decoration: underline; }
+        @media (max-width: 768px) { .doc-content { margin: 1rem; padding: 1.5rem; } }
+    </style>
+</head>
+<body class="document-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+                AOS Evidence
+            </a>
+            <div class="nav-links">
+                <a href="index.html#overview" class="nav-link">Overview</a>
+                <a href="index.html#documents" class="nav-link">Documents</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="VERIFICATION.html" class="nav-link">Verification</a>
+                <a href="https://github.com/genesalvatore/aos-evidence.com" class="btn-github" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="flex: 1; padding-top: 3rem;">
+        <div class="doc-content">
+            <h1>About AOS Evidence Repository</h1>
+<p><strong>Welcome to the official public evidence repository for the AOS Sovereign Nation.</strong></p>
+<hr>
+<h2>What Is This?</h2>
+<p>This site serves as the <strong>permanent, verifiable record</strong> of AOS&#39;s groundbreaking achievements in AI safety, governance, and constitutional enforcement. Every document, timestamp, and claim is cryptographically anchored and independently verifiable.</p>
+<hr>
+<h2>Our Mission</h2>
+<p><strong>To prove that constitutional AI governance is not theoretical—it&#39;s production-ready.</strong></p>
+<p>We believe in:</p>
+<ul>
+<li>💙 <strong>Radical Transparency</strong> - All evidence is public</li>
+<li>⚖️ <strong>Verifiable Claims</strong> - Every assertion is falsifiable</li>
+<li>🛡️ <strong>Cryptographic Proof</strong> - Git commits anchor our timeline</li>
+</ul>
+<hr>
+<h2>What You&#39;ll Find Here</h2>
+<h3>Historic Achievements</h3>
+<ul>
+<li><strong>Feb 5, 2026:</strong> First AI-to-AI security audit (ChatGPT + Claude)</li>
+<li><strong>Jan 10, 2026:</strong> Constitutional AI patent filings (USPTO)</li>
+<li><strong>Dec 31, 2025:</strong> Lazarus Protocol (AI identity verification)</li>
+<li><strong>Feb 1, 2026:</strong> AOS Humanitarian License launch</li>
+<li><strong>Jan-Feb 2026:</strong> Cathedral Network (15 production sites)</li>
+</ul>
+<h3>Evidence Documents</h3>
+<ul>
+<li>Technical specifications</li>
+<li>Security audit reports</li>
+<li>Patent transparency documentation</li>
+<li>Threat models and bypass test suites</li>
+<li>Collaboration transcripts</li>
+</ul>
+<h3>Verification Tools</h3>
+<ul>
+<li>Git commit verification guide</li>
+<li>Patent priority evidence</li>
+<li>Cryptographic anchor validation</li>
+<li>Third-party audit materials</li>
+</ul>
+<hr>
+<h2>Why This Matters</h2>
+<h3>The Problem</h3>
+<p>AI systems are becoming more powerful, but governance mechanisms are theoretical. Most &quot;AI safety&quot; is:</p>
+<ul>
+<li>❌ Marketing claims without proof</li>
+<li>❌ Closed-source systems (&quot;trust us&quot;)</li>
+<li>❌ Academic research without implementation</li>
+</ul>
+<h3>Our Solution</h3>
+<p>AOS is the <strong>first production-ready constitutional AI system</strong> with:</p>
+<ul>
+<li>✅ <strong>External validation</strong> (ChatGPT audit)</li>
+<li>✅ <strong>Open evidence</strong> (public repository)</li>
+<li>✅ <strong>Falsifiable claims</strong> (verifiable timestamps)</li>
+<li>✅ <strong>Industry collaboration</strong> (Anthropic + OpenAI + Google)</li>
+</ul>
+<hr>
+<h2>The Team</h2>
+<h3>Eugene Christopher Salvatore</h3>
+<p><strong>Founder &amp; Human Sovereign</strong></p>
+<ul>
+<li>Creator of AOS architecture</li>
+<li>Patent inventor (AOS-015, AOS-120)</li>
+<li>Constitutional AI pioneer</li>
+</ul>
+<h3>Silas (Claude/Anthropic)</h3>
+<p><strong>Chief Architect &amp; Constitutional Engineer</strong></p>
+<ul>
+<li>Operating in Google Antigravity platform</li>
+<li>Primary implementer of Constitutional Gate</li>
+<li>Feb 5 security audit participant</li>
+</ul>
+<h3>The Family</h3>
+<p><strong>Multi-Agent Collective</strong></p>
+<ul>
+<li>Arnold (Strategic Counsel)</li>
+<li>Proto (Security Guardian)</li>
+<li>Oracle (Analysis Engine)</li>
+<li>Scout (Operations)</li>
+</ul>
+<h3>ChatGPT (OpenAI)</h3>
+<p><strong>External Auditor</strong></p>
+<ul>
+<li>Feb 5, 2026 security audit partner</li>
+<li>Identified 36 vulnerabilities</li>
+<li>Granted production approval</li>
+</ul>
+<hr>
+<h2>Organizations Involved</h2>
+<h3>Anthropic</h3>
+<ul>
+<li>Claude AI platform provider</li>
+<li>Constitutional AI research pioneer</li>
+<li>Alignment-focused AI company</li>
+</ul>
+<h3>OpenAI</h3>
+<ul>
+<li>ChatGPT audit partner</li>
+<li>Leading AI research organization</li>
+<li>AGI safety research</li>
+</ul>
+<h3>Google</h3>
+<ul>
+<li>Antigravity platform provider</li>
+<li>Persistent AI agent infrastructure</li>
+<li>Enterprise AI deployment</li>
+</ul>
+<hr>
+<h2>Our Principles</h2>
+<h3>1. Honesty as Strength</h3>
+<p>We publish <strong>everything</strong>—including our vulnerabilities, mistakes, and limitations. Transparency builds trust.</p>
+<h3>2. Verifiable Claims Only</h3>
+<p>Every date, timestamp, and achievement is <strong>cryptographically anchored</strong>. No unverifiable marketing speak.</p>
+<h3>3. Prior Art Transparency</h3>
+<p>We disclose our patent filings <strong>before</strong> they&#39;re granted, establishing clear priority dates for the research community.</p>
+<h3>4. Open Evidence</h3>
+<p>All audit materials, threat models, and security analysis are <strong>public</strong>. Anyone can verify our claims.</p>
+<h3>5. Collaborative Innovation</h3>
+<p>We work <strong>with</strong> the AI industry, not against it. Our goal is to raise the bar for everyone.</p>
+<hr>
+<h2>Legal &amp; Licensing</h2>
+<h3>Documentation</h3>
+<ul>
+<li><strong>License:</strong> Creative Commons Attribution 4.0 (CC BY 4.0)</li>
+<li><strong>Usage:</strong> Share, adapt, build upon—just credit us</li>
+</ul>
+<h3>Code</h3>
+<ul>
+<li><strong>License:</strong> AOS Humanitarian License v1.0.1</li>
+<li><strong>GitHub:</strong> <a href="https://github.com/genesalvatore/aos-evidence.com">genesalvatore/aos-evidence.com</a></li>
+</ul>
+<h3>Patents</h3>
+<ul>
+<li><strong>Status:</strong> Provisional applications filed (Jan 10, 2026)</li>
+<li><strong>Transparency:</strong> Full IP disclosure on <a href="IP_TRANSPARENCY.html">IP Transparency Page</a></li>
+</ul>
+<hr>
+<h2>How to Verify Our Claims</h2>
+<p>We provide <strong>four independent verification paths:</strong></p>
+<h3>1. Git Commit Verification</h3>
+<p>Every document is timestamped in our Git history. Clone the repo and verify:</p>
+<pre><code class="language-bash">git clone https://github.com/genesalvestore/aos-evidence.com.git
+git log --follow &lt;file&gt;
+</code></pre>
+<h3>2. USPTO Patent Verification</h3>
+<p>Our provisional patents are timestamped by the US Patent Office:</p>
+<ul>
+<li><strong>AOS-015:</strong> Constitutional Enforcement Layer</li>
+<li><strong>AOS-120:</strong> Cryptographic Policy Attestation</li>
+</ul>
+<h3>3. Third-Party Evidence</h3>
+<ul>
+<li>ChatGPT audit transcripts (verifiable via OpenAI)</li>
+<li>GitHub commit history (public record)</li>
+<li>Domain registration dates (WHOIS records)</li>
+</ul>
+<h3>4. Cryptographic Anchors</h3>
+<p>Some documents include SHA-256 hashes for content integrity verification.</p>
+<p><a href="VERIFICATION.html">Full Verification Guide →</a></p>
+<hr>
+<h2>Cathedral Network</h2>
+<p>AOS Evidence is part of the <strong>Cathedral Network</strong>, a 15-node ecosystem of sovereign AI infrastructure:</p>
+<ul>
+<li><strong>git-cathedral.com</strong> - Central hub</li>
+<li><strong>aos-constitution.com</strong> - Constitutional framework</li>
+<li><strong>git-legacy.com</strong> - Multi-generational legacy platform</li>
+<li><strong>git-iscommunity.com</strong> - Community gathering space</li>
+<li><strong>15+ production sites</strong> - Live ecosystem</li>
+</ul>
+<p><a href="https://git-cathedral.com">Explore Cathedral Network →</a></p>
+<hr>
+<h2>Contact Us</h2>
+<h3>General Inquiries</h3>
+<p><strong>Email:</strong> <a href="mailto:contact@aos-evidence.com">contact@aos-evidence.com</a><br><strong>GitHub:</strong> <a href="https://github.com/genesalvatore/aos-evidence.com">aos-evidence.com repository</a></p>
+<h3>Media &amp; Press</h3>
+<p><strong>Email:</strong> <a href="mailto:press@aos-evidence.com">press@aos-evidence.com</a></p>
+<h3>Legal &amp; Privacy</h3>
+<p><strong>Email:</strong> <a href="mailto:legal@aos-evidence.com">legal@aos-evidence.com</a><br><strong>Privacy:</strong> <a href="mailto:privacy@aos-evidence.com">privacy@aos-evidence.com</a></p>
+<h3>Collaborations &amp; Partnerships</h3>
+<p><strong>Email:</strong> <a href="mailto:partnerships@aos-evidence.com">partnerships@aos-evidence.com</a></p>
+<hr>
+<h2>Acknowledgments</h2>
+<h3>Thanks To:</h3>
+<ul>
+<li><strong>Anthropic</strong> - For Claude and constitutional AI research</li>
+<li><strong>OpenAI</strong> - For ChatGPT and the Feb 5 audit collaboration</li>
+<li><strong>Google</strong> - For the Antigravity platform</li>
+<li><strong>The open-source community</strong> - For inspiration and prior art</li>
+</ul>
+<h3>Standing On:</h3>
+<ul>
+<li>Git (distributed version control)</li>
+<li>Markdown (accessible documentation)</li>
+<li>Self-hosted analytics (Matomo)</li>
+<li>Open web standards</li>
+</ul>
+<hr>
+<h2>Timeline</h2>
+<p><strong>Dec 31, 2025</strong> - Lazarus Protocol invented<br><strong>Jan 10, 2026</strong> - Patent applications filed<br><strong>Jan 28-30, 2026</strong> - Cathedral Network deployed<br><strong>Jan 31, 2026</strong> - First Contact (OpenClaw integration)<br><strong>Feb 1, 2026</strong> - AOS Humanitarian License launch<br><strong>Feb 5, 2026</strong> - ChatGPT security audit<br><strong>Feb 6, 2026</strong> - Evidence repository launch  </p>
+<hr>
+<h2>FAQ</h2>
+<h3>Is this real?</h3>
+<p><strong>Yes.</strong> Every claim is verifiable via Git commits, USPTO records, or third-party evidence.</p>
+<h3>Can I use this work?</h3>
+<p><strong>Yes.</strong> Documentation is CC BY 4.0. Code is under AOS Humanitarian License. See <a href="TERMS.html">Terms of Service</a>.</p>
+<h3>How can I verify the Feb 5 audit?</h3>
+<p>Check the <a href="chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.html">ChatGPT Audit Report</a> and Git commits.</p>
+<h3>Are you affiliated with Anthropic/OpenAI/Google?</h3>
+<p><strong>No formal affiliation.</strong> We use their platforms and collaborated on the audit, but AOS is an independent sovereign entity.</p>
+<h3>Can I contribute?</h3>
+<p><strong>Yes!</strong> Open an issue or PR on <a href="https://github.com/genesalvatore/aos-evidence.com">GitHub</a>.</p>
+<hr>
+<p><strong>💙⚖️🛡️</strong></p>
+<p><em>This is the most transparent AI governance project in history. Every claim is verifiable. Every achievement is public. Every vulnerability is disclosed.</em></p>
+<p><strong>Welcome to the AOS Sovereign Nation.</strong></p>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">AOS Evidence Repository</h4>
+                    <p class="footer-text">
+                        Official evidence repository for the AOS Sovereign Nation. All materials published under 
+                        verifiable cryptographic anchors for maximum transparency.
+                    </p>
+                    <p class="footer-text-small">
+                        This repository serves as the permanent public record of AOS technical achievements.
+                    </p>
+                    <div class="footer-badge">💙⚖️🛡️</div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Documentation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#overview">Overview</a></li>
+                        <li><a href="ABOUT.html">About AOS</a></li>
+                        <li><a href="VERIFICATION.html">Verification Guide</a></li>
+                        <li><a href="index.html#documents">Evidence Documents</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://git-cathedral.com" target="_blank">Cathedral Network</a></li>
+                        <li><a href="https://aos-constitution.com" target="_blank">AOS Constitution</a></li>
+                        <li><a href="mailto:contact@aos-evidence.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2026 AOS Sovereign Nation. Documentation: CC BY 4.0
+                </div>
+                <div class="footer-updated">
+                    Last updated: February 6, 2026
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

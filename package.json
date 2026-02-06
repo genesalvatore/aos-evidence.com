@@ -1,0 +1,24 @@
+{
+  "name": "aos-evidence.com",
+  "version": "1.0.0",
+  "description": "**Verifiable, Immutable, Public Evidence of AI Safety Achievement**",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/genesalvatore/aos-evidence.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/genesalvatore/aos-evidence.com/issues"
+  },
+  "homepage": "https://github.com/genesalvatore/aos-evidence.com#readme",
+  "dependencies": {
+    "marked": "^17.0.1"
+  }
+}

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy | AOS Evidence Repository</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #0891b2;
+            --success: #10b981;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-sans); color: var(--gray-900); background: var(--gray-50); line-height: 1.6; }
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-md);}
+        
+        /* Navigation */
+        .navbar{background:white;border-bottom:1px solid var(--gray-200);padding:1rem 0;position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);}
+        .logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;color:var(--gray-900);font-size:1.1rem;text-decoration:none;}
+        .logo svg{color:var(--primary);}
+        .nav-links{display:flex;align-items:center;gap:var(--space-md);flex-wrap:wrap;}
+        .nav-link{color:var(--gray-700);font-weight:500;text-decoration:none;padding:0.5rem 0;transition:color 0.2s;}
+        .nav-link:hover{color:var(--primary);}
+        .btn-github{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gray-900);color:white;padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600;text-decoration:none;transition:transform 0.2s;}
+        .btn-github:hover{transform:translateY(-2px);}
+        
+        /* Footer */
+        .footer{background:var(--gray-900);color:white;padding:var(--space-xl) 0 var(--space-md);}
+        .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--space-xl);margin-bottom:var(--space-lg);}
+        .footer-section h4{color:white;margin-bottom:var(--space-md);}
+        .footer-title{font-size:1.1rem;font-weight:700;color:white;}
+        .footer-text{font-size:0.9375rem;line-height:1.7;opacity:0.9;margin-bottom:var(--space-sm);}
+        .footer-text-small{font-size:0.875rem;opacity:0.7;}
+        .footer-badge{display:inline-block;font-size:1.5rem;margin-top:var(--space-sm);}
+        .footer-links{list-style:none;}
+        .footer-links li{margin-bottom:0.5rem;}
+        .footer-links a{color:rgba(255,255,255,0.9);text-decoration:none;transition:color 0.2s;}
+        .footer-links a:hover{color:white;text-decoration:underline;}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:var(--space-sm);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-sm);}
+        .footer-copyright,.footer-updated{font-size:0.875rem;opacity:0.7;}
+        .footer-copyright a{color:inherit;}
+        
+        /* Page Styles */
+        .document-page { background: var(--gray-50); min-height: 100vh; display: flex; flex-direction: column; }
+        .doc-content { background: white; max-width: 900px; margin: 2rem auto; padding: 3rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); line-height: 1.7; flex: 1; }
+        .doc-content h1 { color: #2563eb; margin-top: 2rem; padding-bottom: 0.5rem; border-bottom: 3px solid #2563eb; }
+        .doc-content h2 { color: #111827; margin-top: 1.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #e5e7eb; }
+        .doc-content h3 { color: #374151; margin-top: 1rem; }
+        .doc-content p { margin-bottom: 1rem; color: #374151; }
+        .doc-content ul, .doc-content ol { margin-bottom: 1rem; padding-left: 2rem; }
+        .doc-content li { margin-bottom: 0.5rem; color: #374151; }
+        .doc-content code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; color: #2563eb; }
+        .doc-content pre { background: #111827; color: #00ff00; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+        .doc-content pre code { background: none; color: inherit; padding: 0; }
+        .doc-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .doc-content th, .doc-content td { padding: 0.75rem; border: 1px solid #d1d5db; text-align: left; }
+        .doc-content th { background: #f3f4f6; font-weight: 600; }
+        .doc-content blockquote { border-left: 4px solid #2563eb; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #4b5563; }
+        .doc-content hr { border: none; border-top: 2px solid #e5e7eb; margin: 2rem 0; }
+        .doc-content a { color: #2563eb; text-decoration: underline; }
+        @media (max-width: 768px) { .doc-content { margin: 1rem; padding: 1.5rem; } }
+    </style>
+</head>
+<body class="document-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+                AOS Evidence
+            </a>
+            <div class="nav-links">
+                <a href="index.html#overview" class="nav-link">Overview</a>
+                <a href="index.html#documents" class="nav-link">Documents</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="VERIFICATION.html" class="nav-link">Verification</a>
+                <a href="https://github.com/genesalvatore/aos-evidence.com" class="btn-github" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="flex: 1; padding-top: 3rem;">
+        <div class="doc-content">
+            <h1>Privacy Policy</h1>
+<p><strong>Effective Date:</strong> February 6, 2026<br><strong>Last Updated:</strong> February 6, 2026</p>
+<h2>Introduction</h2>
+<p>The AOS Evidence Repository (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit <strong>aos-evidence.com</strong>.</p>
+<hr>
+<h2>Information We Collect</h2>
+<h3>1. Analytics Data (Optional)</h3>
+<p>If you consent to analytics, we collect:</p>
+<ul>
+<li><strong>Page views</strong> and navigation patterns</li>
+<li><strong>Referring websites</strong></li>
+<li><strong>Browser type</strong> and operating system</li>
+<li><strong>Approximate location</strong> (country/city level)</li>
+<li><strong>Time spent</strong> on pages</li>
+</ul>
+<p><strong>Tool Used:</strong> Matomo Analytics (self-hosted at <code>analytics.git-cathedral.com</code>)</p>
+<h3>2. Technical Data (Automatic)</h3>
+<ul>
+<li><strong>IP addresses</strong> (anonymized after 24 hours)</li>
+<li><strong>Browser fingerprints</strong> (for security)</li>
+<li><strong>Error logs</strong> (for debugging)</li>
+</ul>
+<h3>3. No Personal Data</h3>
+<p>We <strong>DO NOT</strong> collect:</p>
+<ul>
+<li>Names, emails, or contact information</li>
+<li>Payment information</li>
+<li>Social media profiles</li>
+<li>Personally identifiable information (PII)</li>
+</ul>
+<hr>
+<h2>How We Use Your Information</h2>
+<ol>
+<li><strong>Understand usage patterns</strong> - See which documents are most accessed</li>
+<li><strong>Improve site performance</strong> - Track page load times</li>
+<li><strong>Detect security threats</strong> - Monitor for suspicious activity</li>
+<li><strong>Verify evidence impact</strong> - Demonstrate public interest in AOS</li>
+</ol>
+<hr>
+<h2>Your Rights (GDPR/CCPA Compliant)</h2>
+<p>You have the right to:</p>
+<ul>
+<li>✅ <strong>Opt out</strong> of analytics (cookie banner)</li>
+<li>✅ <strong>Request data deletion</strong> (email: <a href="mailto:privacy@aos-evidence.com">privacy@aos-evidence.com</a>)</li>
+<li>✅ <strong>Access your data</strong> (limited - we collect minimal data)</li>
+<li>✅ <strong>Port your data</strong> (available upon request)</li>
+</ul>
+<hr>
+<h2>Third-Party Services</h2>
+<h3>Matomo Analytics</h3>
+<ul>
+<li><strong>Self-hosted</strong> (we control the data storage)</li>
+<li><strong>No third-party tracking</strong></li>
+<li><strong>GDPR compliant</strong></li>
+<li><strong>Data retention:</strong> 180 days</li>
+</ul>
+<h3>GitHub (Code Hosting)</h3>
+<ul>
+<li>Evidence documents hosted on GitHub Pages</li>
+<li>Subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">GitHub Privacy Policy</a></li>
+</ul>
+<h3>Netlify (Hosting)</h3>
+<ul>
+<li>Site served via Netlify CDN</li>
+<li>Subject to <a href="https://www.netlify.com/privacy/">Netlify Privacy Policy</a></li>
+</ul>
+<hr>
+<h2>Cookies</h2>
+<h3>Essential Cookies</h3>
+<ul>
+<li><strong><code>aos_evidence_consent</code></strong> - Stores your cookie preference (365 days)</li>
+</ul>
+<h3>Analytics Cookies (If Accepted)</h3>
+<ul>
+<li><strong><code>_pk_*</code></strong> - Matomo session tracking (30 minutes)</li>
+<li><strong><code>_pk_id</code></strong> - Matomo visitor ID (13 months)</li>
+</ul>
+<p><a href="COOKIE_POLICY.html">View Full Cookie Policy →</a></p>
+<hr>
+<h2>Data Security</h2>
+<ul>
+<li>✅ <strong>HTTPS encryption</strong> (all traffic encrypted)</li>
+<li>✅ <strong>No SQL databases</strong> (static site)</li>
+<li>✅ <strong>Self-hosted analytics</strong> (no third-party data sharing)</li>
+<li>✅ <strong>Minimal data collection</strong></li>
+</ul>
+<hr>
+<h2>International Users</h2>
+<p>This site is hosted in the <strong>United States</strong>. If you access from the EU:</p>
+<ul>
+<li><strong>GDPR applies</strong> - We comply fully</li>
+<li><strong>Data transfers</strong> - Minimal (self-hosted analytics)</li>
+<li><strong>Your rights</strong> - Fully respected</li>
+</ul>
+<hr>
+<h2>Children&#39;s Privacy</h2>
+<p>This site is <strong>not intended for children under 13</strong>. We do not knowingly collect data from minors.</p>
+<hr>
+<h2>Changes to This Policy</h2>
+<p>We may update this policy. Check the &quot;Last Updated&quot; date above. Material changes will be announced on the homepage.</p>
+<hr>
+<h2>Contact Us</h2>
+<p><strong>Email:</strong> <a href="mailto:privacy@aos-evidence.com">privacy@aos-evidence.com</a><br><strong>GitHub:</strong> <a href="https://github.com/genesalvatore/aos-evidence.com">aos-evidence.com repository</a><br><strong>Cathedral Network:</strong> <a href="https://git-cathedral.com">git-cathedral.com</a></p>
+<hr>
+<p><strong>💙⚖️🛡️</strong></p>
+<p><em>This privacy policy demonstrates AOS&#39;s commitment to transparency and user rights.</em></p>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">AOS Evidence Repository</h4>
+                    <p class="footer-text">
+                        Official evidence repository for the AOS Sovereign Nation. All materials published under 
+                        verifiable cryptographic anchors for maximum transparency.
+                    </p>
+                    <p class="footer-text-small">
+                        This repository serves as the permanent public record of AOS technical achievements.
+                    </p>
+                    <div class="footer-badge">💙⚖️🛡️</div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Documentation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#overview">Overview</a></li>
+                        <li><a href="ABOUT.html">About AOS</a></li>
+                        <li><a href="VERIFICATION.html">Verification Guide</a></li>
+                        <li><a href="index.html#documents">Evidence Documents</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://git-cathedral.com" target="_blank">Cathedral Network</a></li>
+                        <li><a href="https://aos-constitution.com" target="_blank">AOS Constitution</a></li>
+                        <li><a href="mailto:contact@aos-evidence.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2026 AOS Sovereign Nation. Documentation: CC BY 4.0
+                </div>
+                <div class="footer-updated">
+                    Last updated: February 6, 2026
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

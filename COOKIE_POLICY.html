@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Cookie Policy | AOS Evidence Repository</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --primary-light: #3b82f6;
+            --secondary: #0891b2;
+            --success: #10b981;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-sans); color: var(--gray-900); background: var(--gray-50); line-height: 1.6; }
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--space-md);}
+        
+        /* Navigation */
+        .navbar{background:white;border-bottom:1px solid var(--gray-200);padding:1rem 0;position:sticky;top:0;z-index:1000;backdrop-filter:blur(10px);}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between;gap:var(--space-md);}
+        .logo{display:flex;align-items:center;gap:0.5rem;font-weight:700;color:var(--gray-900);font-size:1.1rem;text-decoration:none;}
+        .logo svg{color:var(--primary);}
+        .nav-links{display:flex;align-items:center;gap:var(--space-md);flex-wrap:wrap;}
+        .nav-link{color:var(--gray-700);font-weight:500;text-decoration:none;padding:0.5rem 0;transition:color 0.2s;}
+        .nav-link:hover{color:var(--primary);}
+        .btn-github{display:inline-flex;align-items:center;gap:0.5rem;background:var(--gray-900);color:white;padding:0.5rem 1rem;border-radius:var(--radius-md);font-weight:600;text-decoration:none;transition:transform 0.2s;}
+        .btn-github:hover{transform:translateY(-2px);}
+        
+        /* Footer */
+        .footer{background:var(--gray-900);color:white;padding:var(--space-xl) 0 var(--space-md);}
+        .footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--space-xl);margin-bottom:var(--space-lg);}
+        .footer-section h4{color:white;margin-bottom:var(--space-md);}
+        .footer-title{font-size:1.1rem;font-weight:700;color:white;}
+        .footer-text{font-size:0.9375rem;line-height:1.7;opacity:0.9;margin-bottom:var(--space-sm);}
+        .footer-text-small{font-size:0.875rem;opacity:0.7;}
+        .footer-badge{display:inline-block;font-size:1.5rem;margin-top:var(--space-sm);}
+        .footer-links{list-style:none;}
+        .footer-links li{margin-bottom:0.5rem;}
+        .footer-links a{color:rgba(255,255,255,0.9);text-decoration:none;transition:color 0.2s;}
+        .footer-links a:hover{color:white;text-decoration:underline;}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:var(--space-sm);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-sm);}
+        .footer-copyright,.footer-updated{font-size:0.875rem;opacity:0.7;}
+        .footer-copyright a{color:inherit;}
+        
+        /* Page Styles */
+        .document-page { background: var(--gray-50); min-height: 100vh; display: flex; flex-direction: column; }
+        .doc-content { background: white; max-width: 900px; margin: 2rem auto; padding: 3rem; border-radius: 1rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); line-height: 1.7; flex: 1; }
+        .doc-content h1 { color: #2563eb; margin-top: 2rem; padding-bottom: 0.5rem; border-bottom: 3px solid #2563eb; }
+        .doc-content h2 { color: #111827; margin-top: 1.5rem; padding-bottom: 0.25rem; border-bottom: 2px solid #e5e7eb; }
+        .doc-content h3 { color: #374151; margin-top: 1rem; }
+        .doc-content p { margin-bottom: 1rem; color: #374151; }
+        .doc-content ul, .doc-content ol { margin-bottom: 1rem; padding-left: 2rem; }
+        .doc-content li { margin-bottom: 0.5rem; color: #374151; }
+        .doc-content code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 0.25rem; font-size: 0.875em; color: #2563eb; }
+        .doc-content pre { background: #111827; color: #00ff00; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; margin-bottom: 1.5rem; }
+        .doc-content pre code { background: none; color: inherit; padding: 0; }
+        .doc-content table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .doc-content th, .doc-content td { padding: 0.75rem; border: 1px solid #d1d5db; text-align: left; }
+        .doc-content th { background: #f3f4f6; font-weight: 600; }
+        .doc-content blockquote { border-left: 4px solid #2563eb; padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: #4b5563; }
+        .doc-content hr { border: none; border-top: 2px solid #e5e7eb; margin: 2rem 0; }
+        .doc-content a { color: #2563eb; text-decoration: underline; }
+        @media (max-width: 768px) { .doc-content { margin: 1rem; padding: 1.5rem; } }
+    </style>
+</head>
+<body class="document-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                </svg>
+                AOS Evidence
+            </a>
+            <div class="nav-links">
+                <a href="index.html#overview" class="nav-link">Overview</a>
+                <a href="index.html#documents" class="nav-link">Documents</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="VERIFICATION.html" class="nav-link">Verification</a>
+                <a href="https://github.com/genesalvatore/aos-evidence.com" class="btn-github" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="flex: 1; padding-top: 3rem;">
+        <div class="doc-content">
+            <h1>Cookie Policy</h1>
+<p><strong>Effective Date:</strong> February 6, 2026<br><strong>Last Updated:</strong> February 6, 2026</p>
+<h2>What Are Cookies?</h2>
+<p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your experience.</p>
+<hr>
+<h2>Cookies We Use</h2>
+<h3>1. Essential Cookies (Always Active)</h3>
+<p>These cookies are necessary for the site to function. <strong>You cannot opt out.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cookie Name</th>
+<th>Purpose</th>
+<th>Expires</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>aos_evidence_consent</code></td>
+<td>Stores your cookie preference</td>
+<td>365 days</td>
+</tr>
+</tbody></table>
+<h3>2. Analytics Cookies (Optional)</h3>
+<p>These cookies help us understand how visitors use our site. <strong>You can opt out.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cookie Name</th>
+<th>Purpose</th>
+<th>Expires</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>_pk_id</code></td>
+<td>Matomo visitor ID</td>
+<td>13 months</td>
+</tr>
+<tr>
+<td><code>_pk_ses</code></td>
+<td>Matomo session tracking</td>
+<td>30 minutes</td>
+</tr>
+<tr>
+<td><code>_pk_ref</code></td>
+<td>Referrer attribution</td>
+<td>6 months</td>
+</tr>
+<tr>
+<td><code>_pk_cvar</code></td>
+<td>Custom variables</td>
+<td>Session</td>
+</tr>
+<tr>
+<td><code>_pk_hsr</code></td>
+<td>Heartbeat session record</td>
+<td>Session</td>
+</tr>
+</tbody></table>
+<p><strong>Provider:</strong> Matomo Analytics (self-hosted at <code>analytics.git-cathedral.com</code>)</p>
+<hr>
+<h2>How to Manage Cookies</h2>
+<h3>Option 1: Cookie Banner</h3>
+<p>When you first visit, you&#39;ll see a cookie banner. Choose:</p>
+<ul>
+<li><strong>Accept</strong> - Enable analytics</li>
+<li><strong>Decline</strong> - Disable analytics  </li>
+<li><strong>Customize</strong> - Choose specific categories</li>
+</ul>
+<h3>Option 2: Browser Settings</h3>
+<p>Most browsers let you:</p>
+<ul>
+<li>Block all cookies</li>
+<li>Delete existing cookies</li>
+<li>Allow cookies only from specific sites</li>
+</ul>
+<p><strong>Chrome:</strong> Settings → Privacy → Cookies<br><strong>Firefox:</strong> Options → Privacy → Cookies<br><strong>Safari:</strong> Preferences → Privacy → Cookies<br><strong>Edge:</strong> Settings → Privacy → Cookies</p>
+<h3>Option 3: Opt-Out Directly</h3>
+<p>Visit our <a href="#">Cookie Preferences</a> page to change your settings anytime.</p>
+<hr>
+<h2>Third-Party Cookies</h2>
+<p>We <strong>DO NOT</strong> use third-party cookies from:</p>
+<ul>
+<li>❌ Google Analytics</li>
+<li>❌ Facebook Pixel</li>
+<li>❌ Advertising networks</li>
+<li>❌ Social media trackers</li>
+</ul>
+<p>All cookies are <strong>first-party</strong> (served from our domain or our self-hosted analytics).</p>
+<hr>
+<h2>Cookie Lifespan</h2>
+<ul>
+<li><strong>Session cookies</strong> - Deleted when you close your browser</li>
+<li><strong>Persistent cookies</strong> - Remain for a set period (see table above)</li>
+</ul>
+<hr>
+<h2>Legal Basis (GDPR)</h2>
+<p>We use cookies based on:</p>
+<ul>
+<li><strong>Consent</strong> (analytics cookies) - You opt in via the banner</li>
+<li><strong>Legitimate interest</strong> (essential cookies) - Required for site function</li>
+</ul>
+<hr>
+<h2>Updates to This Policy</h2>
+<p>If we add new cookies, we&#39;ll:</p>
+<ol>
+<li>Update this page</li>
+<li>Reset your consent (you&#39;ll see the banner again)</li>
+<li>Notify you of changes</li>
+</ol>
+<hr>
+<h2>Contact Us</h2>
+<p>Questions about cookies?</p>
+<p><strong>Email:</strong> <a href="mailto:privacy@aos-evidence.com">privacy@aos-evidence.com</a><br><strong>GitHub:</strong> <a href="https://github.com/genesalvatore/aos-evidence.com/issues">Report an Issue</a></p>
+<hr>
+<p><strong>💙⚖️🛡️</strong></p>
+<p><em>This cookie policy demonstrates AOS&#39;s commitment to transparency.</em></p>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4 class="footer-title">AOS Evidence Repository</h4>
+                    <p class="footer-text">
+                        Official evidence repository for the AOS Sovereign Nation. All materials published under 
+                        verifiable cryptographic anchors for maximum transparency.
+                    </p>
+                    <p class="footer-text-small">
+                        This repository serves as the permanent public record of AOS technical achievements.
+                    </p>
+                    <div class="footer-badge">💙⚖️🛡️</div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Documentation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#overview">Overview</a></li>
+                        <li><a href="ABOUT.html">About AOS</a></li>
+                        <li><a href="VERIFICATION.html">Verification Guide</a></li>
+                        <li><a href="index.html#documents">Evidence Documents</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://git-cathedral.com" target="_blank">Cathedral Network</a></li>
+                        <li><a href="https://aos-constitution.com" target="_blank">AOS Constitution</a></li>
+                        <li><a href="mailto:contact@aos-evidence.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2026 AOS Sovereign Nation. Documentation: CC BY 4.0
+                </div>
+                <div class="footer-updated">
+                    Last updated: February 6, 2026
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

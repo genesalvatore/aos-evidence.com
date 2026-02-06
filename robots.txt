@@ -1,0 +1,38 @@
+# AOS Evidence Repository - Robots.txt
+# Public evidence repository - All content should be indexed
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aos-evidence.com/sitemap.xml
+
+# Crawl-delay for respectful bots
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slur
+
+pbot
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+# Security - block access to sensitive files
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /config/
