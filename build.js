@@ -107,7 +107,15 @@ function createHTMLPage(title, content, backLink = 'index.html', headerTitle = n
                 </svg>
                 AOS Evidence
             </a>
-            <div class="nav-links">
+            
+            <!-- Mobile hamburger -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="nav-links" id="nav-links">
                 <a href="${pathPrefix}index.html#overview" class="nav-link">Overview</a>
                 <a href="${pathPrefix}index.html#documents" class="nav-link">Documents</a>
                 <a href="${pathPrefix}index.html#about" class="nav-link">About</a>
