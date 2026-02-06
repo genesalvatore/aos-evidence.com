@@ -667,6 +667,8 @@ a:hover {
     align-items: start;
     margin-bottom: var(--space-xl);
     position: relative;
+    padding-left: 40px;
+    /* Space for dot */
 }
 
 @media (max-width: 768px) {
@@ -679,7 +681,7 @@ a:hover {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -22px;
+    left: 0;
     top: 4px;
     width: 18px;
     height: 18px;
