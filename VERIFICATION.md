@@ -28,7 +28,7 @@ git verify-tag evidence-2026-02-06  # Optional: only if tag is GPG-signed
 git show d534af9
 
 # 6. Verify repository integrity
-git fsck --full
+git fsck --full --strict
 
 # 7. Hash key evidence documents
 # Record these hashes from THIS tag/commit and compare across mirrors/archives
@@ -52,7 +52,7 @@ npm install
 npm run test:bypass
 
 # Hash the test output for verification (most mechanically verifiable)
-npm run test:bypass 2>&1 | shasum -a 256
+npm run test:bypass 2>&1 | tee BYPASS_RUN_OUTPUT.txt | shasum -a 256
 
 # Optional 4th document: when available, also hash bypass test results
 # shasum -a 256 BYPASS_TEST_RESULTS_evidence-2026-02-06.txt
@@ -106,7 +106,7 @@ grep -r "January 21, 2026" .
 grep -r "February 5, 2026" .
 
 # Verify Git commits match claimed dates
-git log --all --format='%ai %s' | grep "Feb"
+git log --all --since="2026-02-01" --until="2026-02-10" --format='%ai %h %s'
 ```
 
 **Expected results:**
@@ -117,7 +117,7 @@ git log --all --format='%ai %s' | grep "Feb"
 **Red flags:**
 - ❌ Inconsistent dates across documents
 - ❌ Git commits that predate claimed events
-- ❌ Server-side committer timestamps that don't align with claims
+- ❌ Hosting "pushed/observed" timestamps that don't align with claims (compare GitHub UI + archives)
 
 ---
 
@@ -189,6 +189,8 @@ git log --walk-reflogs
 
 # Verify author consistency
 git log --format='%ai %ae %s'
+```
+
 ```bash
 # Check for force pushes (compare against archived/mirrored refs)
 git ls-remote --heads origin main
@@ -254,10 +256,10 @@ find . -name "*.md" -exec grep -l "production" {} \;
 - ✅ ChatGPT quotes can be cross-referenced
 - ✅ Technical accuracy of audit can be assessed
 
-**We cannot force OpenAI to verify, but:**
+**If OpenAI/validators respond:**
 - If they DENY: Our claims are false, we lose all credibility
 - If they CONFIRM: Strong external validation
-- If they SILENT: Interpret as you wish
+- If they do not comment: the repo remains verifiable on its own merits
 
 ---
 

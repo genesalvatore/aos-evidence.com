@@ -145,7 +145,7 @@ git verify-tag evidence-2026-02-06  # Optional: only if tag is GPG-signed
 git show d534af9
 
 # 6. Verify repository integrity
-git fsck --full
+git fsck --full --strict
 
 # 7. Hash key evidence documents
 # Record these hashes from THIS tag/commit and compare across mirrors/archives
@@ -167,7 +167,7 @@ npm install
 npm run test:bypass
 
 # Hash the test output for verification (most mechanically verifiable)
-npm run test:bypass 2&gt;&amp;1 | shasum -a 256
+npm run test:bypass 2&gt;&amp;1 | tee BYPASS_RUN_OUTPUT.txt | shasum -a 256
 
 # Optional 4th document: when available, also hash bypass test results
 # shasum -a 256 BYPASS_TEST_RESULTS_evidence-2026-02-06.txt
@@ -213,7 +213,7 @@ grep -r &quot;January 21, 2026&quot; .
 grep -r &quot;February 5, 2026&quot; .
 
 # Verify Git commits match claimed dates
-git log --all --format=&#39;%ai %s&#39; | grep &quot;Feb&quot;
+git log --all --since=&quot;2026-02-01&quot; --until=&quot;2026-02-10&quot; --format=&#39;%ai %h %s&#39;
 </code></pre>
 <p><strong>Expected results:</strong></p>
 <ul>
@@ -225,7 +225,7 @@ git log --all --format=&#39;%ai %s&#39; | grep &quot;Feb&quot;
 <ul>
 <li>❌ Inconsistent dates across documents</li>
 <li>❌ Git commits that predate claimed events</li>
-<li>❌ Server-side committer timestamps that don&#39;t align with claims</li>
+<li>❌ Hosting &quot;pushed/observed&quot; timestamps that don&#39;t align with claims (compare GitHub UI + archives)</li>
 </ul>
 <hr>
 <h3>2. Cross-Reference External Sources</h3>
@@ -294,8 +294,8 @@ git log --walk-reflogs
 
 # Verify author consistency
 git log --format=&#39;%ai %ae %s&#39;
-```bash
-# Check for force pushes (compare against archived/mirrored refs)
+</code></pre>
+<pre><code class="language-bash"># Check for force pushes (compare against archived/mirrored refs)
 git ls-remote --heads origin main
 # Compare with prior archived references (Wayback, signed tags, mirrors)
 </code></pre>
@@ -385,11 +385,11 @@ find . -name &quot;*.md&quot; -exec grep -l &quot;production&quot; {} \;
 <li>✅ ChatGPT quotes can be cross-referenced</li>
 <li>✅ Technical accuracy of audit can be assessed</li>
 </ul>
-<p><strong>We cannot force OpenAI to verify, but:</strong></p>
+<p><strong>If OpenAI/validators respond:</strong></p>
 <ul>
 <li>If they DENY: Our claims are false, we lose all credibility</li>
 <li>If they CONFIRM: Strong external validation</li>
-<li>If they SILENT: Interpret as you wish</li>
+<li>If they do not comment: the repo remains verifiable on its own merits</li>
 </ul>
 <hr>
 <h3>7. Patent Priority Verification</h3>
