@@ -661,13 +661,17 @@ a:hover {
 }
 
 .timeline-item {
-    position: relative;
-    padding-left: 60px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    column-gap: var(--space-md);
+    align-items: start;
     margin-bottom: var(--space-xl);
+    position: relative;
 }
 
 @media (max-width: 768px) {
     .timeline-item {
+        grid-template-columns: 1fr;
         padding-left: 50px;
     }
 }
@@ -675,7 +679,7 @@ a:hover {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 22px;
+    left: -22px;
     top: 4px;
     width: 18px;
     height: 18px;
@@ -715,24 +719,19 @@ a:hover {
     }
 }
 
-.timeline-content {
-    padding-top: 1.75rem;
-}
-
 .timeline-date {
-    position: absolute;
-    left: 55px;
-    top: -2px;
     font-weight: 700;
     color: var(--primary);
     font-size: 1rem;
     white-space: nowrap;
-    line-height: 1.4;
+    text-align: right;
+    line-height: 1.3;
+    padding-top: 2px;
 }
 
 @media (max-width: 768px) {
     .timeline-date {
-        position: static;
+        text-align: left;
         margin-bottom: var(--space-xs);
         font-size: 0.9375rem;
     }
