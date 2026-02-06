@@ -34,6 +34,17 @@ shasum -a 256 chatgpt_security_audit_feb_5_2026/WHAT_WE_BUILT_FEB_5_2026.md
 shasum -a 256 chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md
 ```
 
+**Reproducibility (when bypass tests published ~Feb 15):**
+```bash
+# Run bypass test suite at this exact tag
+git checkout evidence-2026-02-06
+npm install
+npm run test:bypass
+
+# Hash the test output for verification
+npm run test:bypass 2>&1 | shasum -a 256
+```
+
 **Deep verification (1-2 hours):**
 - Follow complete guide below
 - Cross-reference external sources  
