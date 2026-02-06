@@ -5,7 +5,7 @@ const { marked } = require('marked');
 
 // HTML template function
 function createHTMLPage(title, content, backLink = 'index.html', headerTitle = null) {
-    const isSubdir = backLink.includes('chatgpt');
+    const isSubdir = backLink.startsWith('../');
     const pathPrefix = isSubdir ? '../' : '';
 
     return `<!DOCTYPE html>

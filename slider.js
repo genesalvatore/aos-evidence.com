@@ -165,7 +165,7 @@ const achievements = [
         subtitle: 'Establishing Prior Art and Priority',
         description: 'Filed two provisional patent applications with the USPTO: <strong>AOS-015</strong> (Constitutional Enforcement Layer) and <strong>AOS-120</strong> (Cryptographic Policy Attestation). These filings established <strong>11-day priority</strong> before industry convergence on constitutional AI frameworks.',
         heroStats: [
-            { number: '2', label: 'Patent Applications' },
+            { number: '137+', label: 'Patent Applications' },
             { number: '11', label: 'Days Priority' },
             { number: '✓', label: 'USPTO Filed' }
         ],

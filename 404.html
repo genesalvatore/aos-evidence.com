@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | AOS Evidence Repository</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-xl);
+        }
+
+        .error-content {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: var(--space-md);
+        }
+
+        .error-title {
+            font-size: 2rem;
+            color: var(--gray-900);
+            margin-bottom: var(--space-md);
+        }
+
+        .error-description {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            margin-bottom: var(--space-xl);
+            line-height: 1.7;
+        }
+
+        .error-links {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .error-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all var(--transition-base);
+        }
+
+        .error-link:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .error-link-secondary {
+            background: var(--gray-100);
+            color: var(--gray-900);
+        }
+
+        .error-link-secondary:hover {
+            background: var(--gray-200);
+        }
+
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-lg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"
+                style="display: flex; align-items: center; gap: 0.75rem; font-weight: 700; color: var(--gray-900); font-size: 1.25rem; text-decoration: none;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    style="color: var(--primary);">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="M9 12l2 2 4-4" />
+                </svg>
+                <span
+                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">AOS
+                    Evidence</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#overview" class="nav-link">Overview</a>
+                <a href="index.html#documents" class="nav-link">Documents</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="VERIFICATION.html" class="nav-link">Verification</a>
+                <a href="https://github.com/genesalvatore/aos-evidence.com" class="btn-github" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    GitHub
+                </a>
+            </nav>
+        </div>
+    </nav>
+
+    <!-- Error Content -->
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">🔍</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Evidence Not Found</h1>
+            <p class="error-description">
+                The evidence you're looking for doesn't exist in this repository.
+                It may have been moved, archived, or never existed in the timeline we're documenting.
+            </p>
+            <div class="error-links">
+                <a href="index.html" class="error-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    Return Home
+                </a>
+                <a href="index.html#documents" class="error-link error-link-secondary">
+                    Browse Evidence
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2026 AOS Sovereign Nation
+                </div>
+                <div class="footer-updated">
+                    Last updated: February 6, 2026
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
