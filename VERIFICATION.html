@@ -118,35 +118,44 @@
 <p><strong>How to Independently Verify AOS Evidence</strong></p>
 <p>This guide explains how researchers, developers, auditors, and the public can independently verify all claims made in this repository.</p>
 <hr>
-<h2>Quick Start</h2>
-<p><strong>Basic verification (5 minutes):</strong></p>
-<pre><code class="language-bash"># Clone repository
+<h2>2-Minute Verification</h2>
+<p><strong>Verify core evidence in ~2 minutes:</strong></p>
+<pre><code class="language-bash"># 1. Clone the repository
 git clone https://github.com/genesalvatore/aos-evidence.com.git
 cd aos-evidence.com
 
-# Check commit timestamps
-git log --format=fuller
+# 2. Check the canonical commit for Feb 5 audit
+git show d534af9
 
-# Verify a specific document
-git log --follow -- chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
+# 3. Verify repository integrity
+git fsck --full
+
+# 4. Hash key evidence document
+shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
 </code></pre>
+<p><strong>Expected SHA256:</strong> <code>[will be added after final review]</code></p>
 <p><strong>Deep verification (1-2 hours):</strong></p>
 <ul>
 <li>Follow complete guide below</li>
-<li>Cross-reference external sources</li>
+<li>Cross-reference external sources  </li>
 <li>Test technical claims</li>
 <li>Audit timeline consistency</li>
 </ul>
 <hr>
-<h2>What Can Be Verified</h2>
-<h3>✅ Verifiable Claims</h3>
+<h2>What Git Proves (and what it doesn&#39;t)</h2>
+<h3>✅ Verifiable via Git</h3>
 <ol>
-<li><strong>Git commit timestamps</strong> - GitHub cryptographically signs all commits</li>
-<li><strong>Document publication dates</strong> - Immutable Git history</li>
-<li><strong>External events</strong> - Industry announcements on specific dates</li>
-<li><strong>Technical specifications</strong> - Can be tested and reproduced</li>
-<li><strong>Vulnerability fixes</strong> - Bypass tests can verify (when published)</li>
-<li><strong>Patent filing dates</strong> - USPTO records (after publication period)</li>
+<li><strong>Integrity</strong> - Git stores content by hash; change the content → hash changes</li>
+<li><strong>History</strong> - Commits form a parent-linked chain (tampering becomes detectable)</li>
+<li><strong>Reproducibility</strong> - Anyone can clone and re-run tests against the same commit</li>
+<li><strong>Authenticity (when signed)</strong> - GPG/S/MIME signatures prove who signed a tag/commit</li>
+<li><strong>Server timestamps</strong> - GitHub records server-side committer timestamps</li>
+</ol>
+<h3>⚠️ Git Limitations</h3>
+<ol>
+<li><strong>Availability</strong> - Repos can be deleted if nobody mirrors them (we encourage mirrors/archives)</li>
+<li><strong>Claims outside the repo</strong> - Anything not anchored to a commit/tag is not evidence</li>
+<li><strong>Author timestamps</strong> - Can be set to any value; rely on server-side committer timestamps</li>
 </ol>
 <h3>❌ Non-Verifiable (Trust Required)</h3>
 <ol>
@@ -178,7 +187,7 @@ git log --all --format=&#39;%ai %s&#39; | grep &quot;Feb&quot;
 <ul>
 <li>❌ Inconsistent dates across documents</li>
 <li>❌ Git commits that predate claimed events</li>
-<li>❌ Backdated commits (GitHub would detect)</li>
+<li>❌ Server-side committer timestamps that don&#39;t align with claims</li>
 </ul>
 <hr>
 <h3>2. Cross-Reference External Sources</h3>

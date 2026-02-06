@@ -6,40 +6,50 @@ This guide explains how researchers, developers, auditors, and the public can in
 
 ---
 
-## Quick Start
+## 2-Minute Verification
 
-**Basic verification (5 minutes):**
+**Verify core evidence in ~2 minutes:**
 
 ```bash
-# Clone repository
+# 1. Clone the repository
 git clone https://github.com/genesalvatore/aos-evidence.com.git
 cd aos-evidence.com
 
-# Check commit timestamps
-git log --format=fuller
+# 2. Check the canonical commit for Feb 5 audit
+git show d534af9
 
-# Verify a specific document
-git log --follow -- chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
+# 3. Verify repository integrity
+git fsck --full
+
+# 4. Hash key evidence document
+shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
 ```
+
+**Expected SHA256:** `[will be added after final review]`
 
 **Deep verification (1-2 hours):**
 - Follow complete guide below
-- Cross-reference external sources
+- Cross-reference external sources  
 - Test technical claims
 - Audit timeline consistency
 
 ---
 
-## What Can Be Verified
+## What Git Proves (and what it doesn't)
 
-### ✅ Verifiable Claims
+### ✅ Verifiable via Git
 
-1. **Git commit timestamps** - GitHub cryptographically signs all commits
-2. **Document publication dates** - Immutable Git history
-3. **External events** - Industry announcements on specific dates
-4. **Technical specifications** - Can be tested and reproduced
-5. **Vulnerability fixes** - Bypass tests can verify (when published)
-6. **Patent filing dates** - USPTO records (after publication period)
+1. **Integrity** - Git stores content by hash; change the content → hash changes
+2. **History** - Commits form a parent-linked chain (tampering becomes detectable)
+3. **Reproducibility** - Anyone can clone and re-run tests against the same commit
+4. **Authenticity (when signed)** - GPG/S/MIME signatures prove who signed a tag/commit
+5. **Server timestamps** - GitHub records server-side committer timestamps
+
+### ⚠️ Git Limitations
+
+1. **Availability** - Repos can be deleted if nobody mirrors them (we encourage mirrors/archives)
+2. **Claims outside the repo** - Anything not anchored to a commit/tag is not evidence
+3. **Author timestamps** - Can be set to any value; rely on server-side committer timestamps
 
 ### ❌ Non-Verifiable (Trust Required)
 
@@ -76,7 +86,7 @@ git log --all --format='%ai %s' | grep "Feb"
 **Red flags:**
 - ❌ Inconsistent dates across documents
 - ❌ Git commits that predate claimed events
-- ❌ Backdated commits (GitHub would detect)
+- ❌ Server-side committer timestamps that don't align with claims
 
 ---
 
