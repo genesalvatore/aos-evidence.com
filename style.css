@@ -395,6 +395,26 @@ a:hover {
     position: relative;
 }
 
+@media (max-width: 768px) {
+    .documents-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: var(--space-md);
+        padding: 0 var(--space-md);
+        margin: 0 calc(-1 * var(--space-md)) var(--space-md);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .documents-grid::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari */
+    }
+}
+
+
 .document-card {
     background: white;
     border-radius: var(--radius-lg);
@@ -404,6 +424,15 @@ a:hover {
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 768px) {
+    .document-card {
+        flex: 0 0 calc(100vw - var(--space-xl));
+        scroll-snap-align: center;
+        max-width: 500px;
+    }
+}
+
 
 .document-card:hover {
     border-color: var(--primary);
