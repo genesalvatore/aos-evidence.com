@@ -15,13 +15,20 @@ This guide explains how researchers, developers, auditors, and the public can in
 git clone https://github.com/genesalvatore/aos-evidence.com.git
 cd aos-evidence.com
 
-# 2. Check the canonical commit for Feb 5 audit
+# 2. Check the canonical tag for Feb 6 evidence release
+git show evidence-2026-02-06
+
+# 3. Verify signed tag (if available)
+git verify-tag evidence-2026-02-06  # Optional: only if tag is GPG-signed
+
+# 4. Check the primary commit for Feb 5 audit
 git show d534af9
 
-# 3. Verify repository integrity
+# 5. Verify repository integrity
 git fsck --full
 
-# 4. Hash key evidence documents (record for comparison across mirrors)
+# 6. Hash key evidence documents
+# Record these hashes from THIS tag/commit and compare across mirrors/archives
 shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
 shasum -a 256 chatgpt_security_audit_feb_5_2026/WHAT_WE_BUILT_FEB_5_2026.md
 shasum -a 256 chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md
