@@ -15,19 +15,22 @@ This guide explains how researchers, developers, auditors, and the public can in
 git clone https://github.com/genesalvatore/aos-evidence.com.git
 cd aos-evidence.com
 
-# 2. Check the canonical tag for Feb 6 evidence release
-git show evidence-2026-02-06
+# 2. Fetch all tags
+git fetch --tags --force
 
-# 3. Verify signed tag (if available)
+# 3. Check the canonical tag for Feb 6 evidence release
+git show --no-patch evidence-2026-02-06
+
+# 4. Verify signed tag (if available)
 git verify-tag evidence-2026-02-06  # Optional: only if tag is GPG-signed
 
-# 4. Check the primary commit for Feb 5 audit
+# 5. Check the  primary commit for Feb 5 audit
 git show d534af9
 
-# 5. Verify repository integrity
+# 6. Verify repository integrity
 git fsck --full
 
-# 6. Hash key evidence documents
+# 7. Hash key evidence documents
 # Record these hashes from THIS tag/commit and compare across mirrors/archives
 
 # macOS/Linux:
@@ -41,7 +44,7 @@ shasum -a 256 chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md
 # Get-FileHash chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md -Algorithm SHA256
 ```
 
-**Reproducibility (when bypass tests published ~Feb 15):**
+**Reproducibility (when bypass tests are published, target: Feb 15):**
 ```bash
 # Run bypass test suite at this exact tag
 git checkout evidence-2026-02-06
@@ -77,7 +80,7 @@ npm run test:bypass 2>&1 | shasum -a 256
 
 1. **Availability** - Repos can be deleted if nobody mirrors them (we encourage mirrors/archives)
 2. **Claims outside the repo** - Anything not anchored to a commit/tag is not evidence
-3. **Author timestamps** - Can be set to any value; rely on server-side committer timestamps
+3. **Author/committer dates** - Both are stored inside the commit object and can be set by the author/committer. Use **signed tags/commits** and **independent mirrors/archives**, plus **hosting "pushed/observed" timestamps**, for stronger timeline confidence
 
 ### ❌ Non-Verifiable (Trust Required)
 
@@ -186,21 +189,24 @@ git log --walk-reflogs
 
 # Verify author consistency
 git log --format='%ai %ae %s'
-
-# Check for force pushes (potential history rewriting)
-git reflog show origin/main
+```bash
+# Check for force pushes (compare against archived/mirrored refs)
+git ls-remote --heads origin main
+# Compare with prior archived references (Wayback, signed tags, mirrors)
 ```
+
+**Note:** Git alone can't prove a remote was never force-pushed unless you have independent references (signed tags, mirrors, archived hashes).
 
 **Red flags:**
 - ❌ Commits amended after initial push
-- ❌ Force pushes to rewrite history
+- ❌ Force pushes to rewrite history (detectable via independent archives)
 - ❌ Inconsistent author information
 - ❌ Suspicious timestamp patterns
 
 **Green flags:**
 - ✅ Linear commit history
 - ✅ Consistent authors
-- ✅ No force pushes
+- ✅ No force pushes detected
 - ✅ Realistic timestamp progression
 
 ---
@@ -293,10 +299,9 @@ git log --format='%ai %ci'
 
 # %ai = author date (set by author/committer)
 # %ci = committer date (set by author/committer)
-
-# GitHub also records push/hosting times (check GitHub UI for "pushed" times)
-# If dates are realistic progression: likely legitimate
 ```
+
+**Note:** `%ai` and `%ci` come from the commit object. For platform-recorded timing, compare with GitHub's "pushed/observed" timestamps (visible in GitHub UI) and third-party archives.
 
 **Pass:** Realistic timestamp progression  
 **Fail:** Suspicious patterns or backdating detected
@@ -376,7 +381,7 @@ Git hosting platforms also record push/hosting metadata. For strongest verificat
 **Answer:** You can't know for certain, but:
 
 1. We published full audit transcript
-2. OpenAI could deny if false (they haven't)
+2. OpenAI (or anyone) **could publicly dispute** these claims. We can't compel confirmation; that's why we publish reproducible artifacts and make claims falsifiable
 3. Technical content is sophisticated (hard to fake)
 4. Claims are specific and falsifiable
 

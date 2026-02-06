@@ -132,19 +132,22 @@
 git clone https://github.com/genesalvatore/aos-evidence.com.git
 cd aos-evidence.com
 
-# 2. Check the canonical tag for Feb 6 evidence release
-git show evidence-2026-02-06
+# 2. Fetch all tags
+git fetch --tags --force
 
-# 3. Verify signed tag (if available)
+# 3. Check the canonical tag for Feb 6 evidence release
+git show --no-patch evidence-2026-02-06
+
+# 4. Verify signed tag (if available)
 git verify-tag evidence-2026-02-06  # Optional: only if tag is GPG-signed
 
-# 4. Check the primary commit for Feb 5 audit
+# 5. Check the  primary commit for Feb 5 audit
 git show d534af9
 
-# 5. Verify repository integrity
+# 6. Verify repository integrity
 git fsck --full
 
-# 6. Hash key evidence documents
+# 7. Hash key evidence documents
 # Record these hashes from THIS tag/commit and compare across mirrors/archives
 
 # macOS/Linux:
@@ -157,7 +160,7 @@ shasum -a 256 chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md
 # Get-FileHash chatgpt_security_audit_feb_5_2026/WHAT_WE_BUILT_FEB_5_2026.md -Algorithm SHA256
 # Get-FileHash chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md -Algorithm SHA256
 </code></pre>
-<p><strong>Reproducibility (when bypass tests published ~Feb 15):</strong></p>
+<p><strong>Reproducibility (when bypass tests are published, target: Feb 15):</strong></p>
 <pre><code class="language-bash"># Run bypass test suite at this exact tag
 git checkout evidence-2026-02-06
 npm install
@@ -190,7 +193,7 @@ npm run test:bypass 2&gt;&amp;1 | shasum -a 256
 <ol>
 <li><strong>Availability</strong> - Repos can be deleted if nobody mirrors them (we encourage mirrors/archives)</li>
 <li><strong>Claims outside the repo</strong> - Anything not anchored to a commit/tag is not evidence</li>
-<li><strong>Author timestamps</strong> - Can be set to any value; rely on server-side committer timestamps</li>
+<li><strong>Author/committer dates</strong> - Both are stored inside the commit object and can be set by the author/committer. Use <strong>signed tags/commits</strong> and <strong>independent mirrors/archives</strong>, plus <strong>hosting &quot;pushed/observed&quot; timestamps</strong>, for stronger timeline confidence</li>
 </ol>
 <h3>❌ Non-Verifiable (Trust Required)</h3>
 <ol>
@@ -291,14 +294,16 @@ git log --walk-reflogs
 
 # Verify author consistency
 git log --format=&#39;%ai %ae %s&#39;
-
-# Check for force pushes (potential history rewriting)
-git reflog show origin/main
+```bash
+# Check for force pushes (compare against archived/mirrored refs)
+git ls-remote --heads origin main
+# Compare with prior archived references (Wayback, signed tags, mirrors)
 </code></pre>
+<p><strong>Note:</strong> Git alone can&#39;t prove a remote was never force-pushed unless you have independent references (signed tags, mirrors, archived hashes).</p>
 <p><strong>Red flags:</strong></p>
 <ul>
 <li>❌ Commits amended after initial push</li>
-<li>❌ Force pushes to rewrite history</li>
+<li>❌ Force pushes to rewrite history (detectable via independent archives)</li>
 <li>❌ Inconsistent author information</li>
 <li>❌ Suspicious timestamp patterns</li>
 </ul>
@@ -306,7 +311,7 @@ git reflog show origin/main
 <ul>
 <li>✅ Linear commit history</li>
 <li>✅ Consistent authors</li>
-<li>✅ No force pushes</li>
+<li>✅ No force pushes detected</li>
 <li>✅ Realistic timestamp progression</li>
 </ul>
 <hr>
@@ -418,10 +423,8 @@ git log --format=&#39;%ai %ci&#39;
 
 # %ai = author date (set by author/committer)
 # %ci = committer date (set by author/committer)
-
-# GitHub also records push/hosting times (check GitHub UI for &quot;pushed&quot; times)
-# If dates are realistic progression: likely legitimate
 </code></pre>
+<p><strong>Note:</strong> <code>%ai</code> and <code>%ci</code> come from the commit object. For platform-recorded timing, compare with GitHub&#39;s &quot;pushed/observed&quot; timestamps (visible in GitHub UI) and third-party archives.</p>
 <p><strong>Pass:</strong> Realistic timestamp progression<br><strong>Fail:</strong> Suspicious patterns or backdating detected</p>
 <hr>
 <h3>Test 2: Industry Timeline Check</h3>
@@ -476,7 +479,7 @@ grep -ro &quot;ChatGPT\|OpenAI\|Anthropic\|Claude\|Silas&quot; . | sort | uniq -
 <p><strong>Answer:</strong> You can&#39;t know for certain, but:</p>
 <ol>
 <li>We published full audit transcript</li>
-<li>OpenAI could deny if false (they haven&#39;t)</li>
+<li>OpenAI (or anyone) <strong>could publicly dispute</strong> these claims. We can&#39;t compel confirmation; that&#39;s why we publish reproducible artifacts and make claims falsifiable</li>
 <li>Technical content is sophisticated (hard to fake)</li>
 <li>Claims are specific and falsifiable</li>
 </ol>
