@@ -21,11 +21,11 @@ git show d534af9
 # 3. Verify repository integrity
 git fsck --full
 
-# 4. Hash key evidence document
+# 4. Hash key evidence documents (record for comparison across mirrors)
 shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
+shasum -a 256 chatgpt_security_audit_feb_5_2026/WHAT_WE_BUILT_FEB_5_2026.md
+shasum -a 256 chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md
 ```
-
-**Expected SHA256:** `[will be added after final review]`
 
 **Deep verification (1-2 hours):**
 - Follow complete guide below
@@ -43,7 +43,7 @@ shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
 2. **History** - Commits form a parent-linked chain (tampering becomes detectable)
 3. **Reproducibility** - Anyone can clone and re-run tests against the same commit
 4. **Authenticity (when signed)** - GPG/S/MIME signatures prove who signed a tag/commit
-5. **Server timestamps** - GitHub records server-side committer timestamps
+5. **Hosting metadata** - Git hosting platforms like GitHub record push/hosting timestamps alongside Git's author/committer dates
 
 ### ⚠️ Git Limitations
 
@@ -260,13 +260,13 @@ Filing Date: January 10, 2026
 
 **How to test:**
 ```bash
-# GitHub timestamps are server-side (cannot be faked)
+# View author and committer timestamps
 git log --format='%ai %ci' 
 
-# %ai = author date (can be set by user)
-# %ci = committer date (set by GitHub)
+# %ai = author date (set by author/committer)
+# %ci = committer date (set by author/committer)
 
-# If committer dates predate author dates: suspicious
+# GitHub also records push/hosting times (check GitHub UI for "pushed" times)
 # If dates are realistic progression: likely legitimate
 ```
 
@@ -336,12 +336,12 @@ grep -ro "ChatGPT\|OpenAI\|Anthropic\|Claude\|Silas" . | sort | uniq -c
 
 ### "How do I know Git timestamps are real?"
 
-**Answer:** GitHub server-side timestamping
+**Answer:** Git commits include author and committer dates (set by author/committer)
 
-- Git commits have two timestamps: author date and committer date
-- Author date: Can be set by user (can be faked)
-- Committer date: Set by GitHub server (cannot be faked)
-- Compare both - if consistent, likely legitimate
+Git hosting platforms also record push/hosting metadata. For strongest verification:
+- Prefer signed tags (GPG/S/MIME) over relying solely on timestamps
+- Use independent mirrors/archives to detect silent changes
+- GitHub records *when commits were pushed/observed*, providing additional context
 
 ### "How do I know ChatGPT actually approved this?"
 
@@ -367,12 +367,12 @@ grep -ro "ChatGPT\|OpenAI\|Anthropic\|Claude\|Silas" . | sort | uniq -c
 
 ### "What if you delete the repo later?"
 
-**Answer:** Git never forgets
+**Answer:** Once cloned/mirrored/archived, history is hard to erase and silent changes become detectable
 
 - Anyone can clone and archive the repo
 - Web archives (Wayback Machine) capture snapshots
-- Once public, it's permanent
-- Deleting repo doesn't erase history
+- If others have copies, silent history changes become detectable
+- Deleting the origin repo doesn't delete others' copies
 
 **That's why we're careful about what we publish.**
 

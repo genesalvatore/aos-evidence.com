@@ -138,10 +138,11 @@ git show d534af9
 # 3. Verify repository integrity
 git fsck --full
 
-# 4. Hash key evidence document
+# 4. Hash key evidence documents (record for comparison across mirrors)
 shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
+shasum -a 256 chatgpt_security_audit_feb_5_2026/WHAT_WE_BUILT_FEB_5_2026.md
+shasum -a 256 chatgpt_security_audit_feb_5_2026/THREAT_MODEL_V1.md
 </code></pre>
-<p><strong>Expected SHA256:</strong> <code>[will be added after final review]</code></p>
 <p><strong>Deep verification (1-2 hours):</strong></p>
 <ul>
 <li>Follow complete guide below</li>
@@ -157,7 +158,7 @@ shasum -a 256 chatgpt_security_audit_feb_5_2026/CHATGPT_AUDIT_REPORT.md
 <li><strong>History</strong> - Commits form a parent-linked chain (tampering becomes detectable)</li>
 <li><strong>Reproducibility</strong> - Anyone can clone and re-run tests against the same commit</li>
 <li><strong>Authenticity (when signed)</strong> - GPG/S/MIME signatures prove who signed a tag/commit</li>
-<li><strong>Server timestamps</strong> - GitHub records server-side committer timestamps</li>
+<li><strong>Hosting metadata</strong> - Git hosting platforms like GitHub record push/hosting timestamps alongside Git&#39;s author/committer dates</li>
 </ol>
 <h3>⚠️ Git Limitations</h3>
 <ol>
@@ -386,13 +387,13 @@ Filing Date: January 10, 2026
 <h3>Test 1: Backdating Check</h3>
 <p><strong>Hypothesis:</strong> Git commits were backdated to create false timeline</p>
 <p><strong>How to test:</strong></p>
-<pre><code class="language-bash"># GitHub timestamps are server-side (cannot be faked)
+<pre><code class="language-bash"># View author and committer timestamps
 git log --format=&#39;%ai %ci&#39; 
 
-# %ai = author date (can be set by user)
-# %ci = committer date (set by GitHub)
+# %ai = author date (set by author/committer)
+# %ci = committer date (set by author/committer)
 
-# If committer dates predate author dates: suspicious
+# GitHub also records push/hosting times (check GitHub UI for &quot;pushed&quot; times)
 # If dates are realistic progression: likely legitimate
 </code></pre>
 <p><strong>Pass:</strong> Realistic timestamp progression<br><strong>Fail:</strong> Suspicious patterns or backdating detected</p>
@@ -438,12 +439,12 @@ grep -ro &quot;ChatGPT\|OpenAI\|Anthropic\|Claude\|Silas&quot; . | sort | uniq -
 <hr>
 <h2>Common Questions</h2>
 <h3>&quot;How do I know Git timestamps are real?&quot;</h3>
-<p><strong>Answer:</strong> GitHub server-side timestamping</p>
+<p><strong>Answer:</strong> Git commits include author and committer dates (set by author/committer)</p>
+<p>Git hosting platforms also record push/hosting metadata. For strongest verification:</p>
 <ul>
-<li>Git commits have two timestamps: author date and committer date</li>
-<li>Author date: Can be set by user (can be faked)</li>
-<li>Committer date: Set by GitHub server (cannot be faked)</li>
-<li>Compare both - if consistent, likely legitimate</li>
+<li>Prefer signed tags (GPG/S/MIME) over relying solely on timestamps</li>
+<li>Use independent mirrors/archives to detect silent changes</li>
+<li>GitHub records <em>when commits were pushed/observed</em>, providing additional context</li>
 </ul>
 <h3>&quot;How do I know ChatGPT actually approved this?&quot;</h3>
 <p><strong>Answer:</strong> You can&#39;t know for certain, but:</p>
@@ -464,12 +465,12 @@ grep -ro &quot;ChatGPT\|OpenAI\|Anthropic\|Claude\|Silas&quot; . | sort | uniq -
 </ul>
 <p><strong>This is why we set a falsifiable claim.</strong></p>
 <h3>&quot;What if you delete the repo later?&quot;</h3>
-<p><strong>Answer:</strong> Git never forgets</p>
+<p><strong>Answer:</strong> Once cloned/mirrored/archived, history is hard to erase and silent changes become detectable</p>
 <ul>
 <li>Anyone can clone and archive the repo</li>
 <li>Web archives (Wayback Machine) capture snapshots</li>
-<li>Once public, it&#39;s permanent</li>
-<li>Deleting repo doesn&#39;t erase history</li>
+<li>If others have copies, silent history changes become detectable</li>
+<li>Deleting the origin repo doesn&#39;t delete others&#39; copies</li>
 </ul>
 <p><strong>That&#39;s why we&#39;re careful about what we publish.</strong></p>
 <hr>
