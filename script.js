@@ -455,15 +455,6 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-// Skip to content link for screen readers
-document.addEventListener('DOMContentLoaded', function () {
-    const skipLink = document.createElement('a');
-    skipLink.href = '#overview';
-    skipLink.className = 'skip-to-content';
-    skipLink.textContent = 'Skip to main content';
-    document.body.prepend(skipLink);
-});
-
 // =============================================================================
 // MOBILE HAMBURGER MENU
 // =============================================================================
