@@ -715,6 +715,10 @@ a:hover {
     }
 }
 
+.timeline-content {
+    padding-top: 1.75rem;
+}
+
 .timeline-date {
     position: absolute;
     left: 55px;
@@ -737,7 +741,7 @@ a:hover {
 .timeline-title {
     color: var(--gray-900);
     margin-bottom: var(--space-xs);
-    margin-top: 3rem;
+    margin-top: 0;
     font-weight: 600;
 }
 
