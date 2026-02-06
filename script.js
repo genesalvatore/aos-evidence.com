@@ -328,30 +328,6 @@ if ('IntersectionObserver' in window) {
 // =============================================================================
 // MOBILE MENU (if needed)
 // =============================================================================
-
-function initMobileMenu() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-
-    // Add mobile toggle if screen is small
-    if (window.innerWidth < 768) {
-        const toggle = document.createElement('button');
-        toggle.className = 'mobile-menu-toggle';
-        toggle.innerHTML = '☰';
-        toggle.onclick = function () {
-            document.querySelector('.nav-links').classList.toggle('mobile-open');
-            trackEvent('Navigation', 'Mobile Menu', 'Toggle');
-        };
-
-        navbar.querySelector('.container').prepend(toggle);
-    }
-}
-
-// Initialize on load and resize
-window.addEventListener('load', initMobileMenu);
-window.addEventListener('resize', debounce(initMobileMenu, 250));
-
-// =============================================================================
 // PERFORMANCE TRACKING
 // =============================================================================
 
