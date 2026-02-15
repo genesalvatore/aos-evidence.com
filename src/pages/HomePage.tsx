@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import AchievementSlider from '../components/AchievementSlider';
+import DocumentSlider from '../components/DocumentSlider';
 
 export default function HomePage() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -155,97 +157,11 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* EVIDENCE DOCUMENTS */}
-            <section id="documents" className="py-24 bg-white border-y border-black/5">
-                <div className="max-w-6xl mx-auto px-6">
-                    <div className="text-center space-y-4 mb-16">
-                        <div className="text-xs font-mono uppercase tracking-wider text-gray-400">Evidence Documents</div>
-                        <h2 className="font-serif text-4xl md:text-5xl">ChatGPT Security Audit</h2>
-                        <p className="text-lg text-gray-500 max-w-2xl mx-auto">Complete, verifiable documentation — Published February 6, 2026</p>
-                    </div>
+            {/* ACHIEVEMENT SLIDER */}
+            <AchievementSlider />
 
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {/* Document 1 */}
-                        <div className="group p-8 rounded-xl border border-gray-100 hover:border-black/20 hover:shadow-lg transition-all duration-300">
-                            <div className="flex justify-between items-center mb-6">
-                                <div className="text-3xl">📄</div>
-                                <span className="text-xs font-mono px-2 py-1 bg-gray-100 rounded-full text-gray-500">12,000 words</span>
-                            </div>
-                            <h3 className="font-bold text-xl mb-3">What We Built</h3>
-                            <p className="text-gray-500 leading-relaxed text-sm mb-6">
-                                Complete story of the February 5 security audit achievement. Documents the external validation process, architectural overview, and significance.
-                            </p>
-                            <div className="space-y-1 text-xs text-green-700 mb-6">
-                                <div>✓ Patent-safe disclosure</div>
-                                <div>✓ Technical + accessible</div>
-                            </div>
-                            <Link to="/audit/what-we-built" className="text-sm font-medium text-black hover:text-gray-600 transition-colors">
-                                Read Document →
-                            </Link>
-                        </div>
-
-                        {/* Document 2 */}
-                        <div className="group p-8 rounded-xl border border-gray-100 hover:border-black/20 hover:shadow-lg transition-all duration-300">
-                            <div className="flex justify-between items-center mb-6">
-                                <div className="text-3xl">🔍</div>
-                                <span className="text-xs font-mono px-2 py-1 bg-gray-100 rounded-full text-gray-500">5,000 words</span>
-                            </div>
-                            <h3 className="font-bold text-xl mb-3">ChatGPT Audit Report</h3>
-                            <p className="text-gray-500 leading-relaxed text-sm mb-6">
-                                Official security audit summary with direct quotes from ChatGPT. All 11 security areas reviewed, final approval statement.
-                            </p>
-                            <div className="space-y-1 text-xs text-green-700 mb-6">
-                                <div>✓ External validation</div>
-                                <div>✓ Production approval</div>
-                            </div>
-                            <Link to="/audit/report" className="text-sm font-medium text-black hover:text-gray-600 transition-colors">
-                                Read Report →
-                            </Link>
-                        </div>
-
-                        {/* Document 3 */}
-                        <div className="group p-8 rounded-xl border border-gray-100 hover:border-black/20 hover:shadow-lg transition-all duration-300">
-                            <div className="flex justify-between items-center mb-6">
-                                <div className="text-3xl">🛡️</div>
-                                <span className="text-xs font-mono px-2 py-1 bg-gray-100 rounded-full text-gray-500">8,500 words</span>
-                            </div>
-                            <h3 className="font-bold text-xl mb-3">Threat Model v1.0</h3>
-                            <p className="text-gray-500 leading-relaxed text-sm mb-6">
-                                All 36 vulnerabilities cataloged with descriptions, fixes, and verification. Organized across 5 audit passes.
-                            </p>
-                            <div className="space-y-1 text-xs text-green-700 mb-6">
-                                <div>✓ Complete transparency</div>
-                                <div>✓ All vulnerabilities fixed</div>
-                            </div>
-                            <Link to="/audit/threat-model" className="text-sm font-medium text-black hover:text-gray-600 transition-colors">
-                                View Threat Model →
-                            </Link>
-                        </div>
-                    </div>
-
-                    {/* Roadmap */}
-                    <div className="mt-16 p-8 rounded-xl bg-gray-50 border border-gray-100">
-                        <h3 className="font-mono text-sm uppercase tracking-wider text-gray-500 mb-6 text-center">Repository Roadmap</h3>
-                        <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                            This repository serves as the <strong className="text-gray-900">permanent evidence archive</strong> for all AOS achievements.
-                        </p>
-                        <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                            <div className="flex items-center gap-3 p-3 bg-white rounded-lg">
-                                <span className="text-xs font-mono font-bold bg-black text-white px-2 py-1 rounded shrink-0">Feb 19</span>
-                                <span className="text-sm text-gray-600">IP Transparency Page</span>
-                            </div>
-                            <div className="flex items-center gap-3 p-3 bg-white rounded-lg">
-                                <span className="text-xs font-mono font-bold bg-black text-white px-2 py-1 rounded shrink-0">Feb 22</span>
-                                <span className="text-sm text-gray-600">Policy Gate Spec v1.0</span>
-                            </div>
-                            <div className="flex items-center gap-3 p-3 bg-white rounded-lg">
-                                <span className="text-xs font-mono font-bold bg-black text-white px-2 py-1 rounded shrink-0">Feb 22</span>
-                                <span className="text-sm text-gray-600">Bypass Test Suite v1.0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/* EVIDENCE DOCUMENTS SLIDER */}
+            <DocumentSlider />
 
             {/* VERIFICATION */}
             <section id="verification" className="py-24">
