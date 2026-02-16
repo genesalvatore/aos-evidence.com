@@ -13,6 +13,16 @@ interface DocumentItem {
 
 const documents: DocumentItem[] = [
     {
+        icon: '⚖️',
+        wordCount: '3,500 words',
+        title: 'Humanitarian License v1.0.1',
+        description:
+            'The irrevocable open-source license restricting AI to peaceful civilian use. 40 prohibited categories, mandatory copyleft, patent notice, and audit requirements.',
+        meta: ['✓ Published Feb 1, 2026', '✓ Irrevocable restrictions'],
+        link: '/license',
+        category: 'Legal Framework',
+    },
+    {
         icon: '📚',
         wordCount: '12,000 words',
         title: 'What We Built',
@@ -51,16 +61,6 @@ const documents: DocumentItem[] = [
         meta: ['✓ Independently verifiable', '✓ Falsifiable claims'],
         link: '/verification',
         category: 'Verification Guide',
-    },
-    {
-        icon: '⚖️',
-        wordCount: '3,500 words',
-        title: 'Humanitarian License v1.0.1',
-        description:
-            'The irrevocable open-source license restricting AI to peaceful civilian use. 40 prohibited categories, mandatory copyleft, patent notice, and audit requirements.',
-        meta: ['✓ Published Feb 1, 2026', '✓ Irrevocable restrictions'],
-        link: '/license',
-        category: 'Legal Framework',
     },
     {
         icon: '🎯',

@@ -1,11 +1,57 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import AchievementSlider from '../components/AchievementSlider';
 import DocumentSlider from '../components/DocumentSlider';
 import SEO from '../components/SEO';
 
+const heroSlides: {
+    badge: string;
+    title: React.ReactNode;
+    description: string;
+    stats: { value: string; label: string; green?: boolean }[];
+    primaryCta: { label: string; href?: string; to?: string };
+    secondaryCta: { label: string; href?: string; to?: string; external?: boolean };
+}[] = [
+        {
+            badge: 'Verifiable Evidence',
+            title: <>Public Record of <br /><span className="italic text-gray-500">AI Safety Achievement.</span></>,
+            description: 'Cryptographically anchored, independently auditable documentation of the first production-approved constitutional AI governance system.',
+            stats: [
+                { value: '36', label: 'Vulnerabilities Fixed' },
+                { value: '5', label: 'Hostile Audit Passes' },
+                { value: '✓', label: 'Production Approved', green: true },
+            ],
+            primaryCta: { label: 'View Evidence', href: '#documents' },
+            secondaryCta: { label: 'Verify It Yourself', to: '/verification' },
+        },
+        {
+            badge: 'Legal Framework',
+            title: <>Open Source for Peace.<br /><span className="italic text-gray-500">Closed Forever to Harm.</span></>,
+            description: 'The AOS Humanitarian License v1.0.1 — an irrevocable open-source license permanently restricting AI to peaceful civilian use. 40 prohibited categories. Mandatory copyleft. Patent-backed enforcement.',
+            stats: [
+                { value: '40', label: 'Prohibited Categories' },
+                { value: '0', label: 'Military Exceptions' },
+                { value: '∞', label: 'Irrevocable Duration' },
+            ],
+            primaryCta: { label: 'Read the License', to: '/license' },
+            secondaryCta: { label: 'View on GitHub', href: 'https://github.com/genesalvatore/aos-openclaw-constitutional/blob/main/LICENSE', external: true },
+        },
+    ];
+
 export default function HomePage() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [heroSlide, setHeroSlide] = useState(0);
+
+    const nextSlide = useCallback(() => {
+        setHeroSlide((s) => (s + 1) % heroSlides.length);
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(nextSlide, 8000);
+        return () => clearInterval(timer);
+    }, [nextSlide]);
+
+    const slide = heroSlides[heroSlide];
 
     return (
         <div className="min-h-screen bg-canvas font-sans text-[#111] selection:bg-black selection:text-white">
@@ -56,43 +102,62 @@ export default function HomePage() {
                 )}
             </nav>
 
-            {/* HERO */}
+            {/* HERO — Sliding */}
             <section className="relative pt-32 pb-24 px-6 md:px-12 lg:px-24">
                 <div className="max-w-4xl mx-auto space-y-8">
-                    <div className="inline-block px-3 py-1 text-xs font-mono border border-black/20 rounded-full uppercase tracking-wider">
-                        Verifiable Evidence
-                    </div>
-                    <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] tracking-tight">
-                        Public Record of <br />
-                        <span className="italic text-gray-500">AI Safety Achievement.</span>
-                    </h1>
-                    <p className="text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed">
-                        Cryptographically anchored, independently auditable documentation of the first production-approved constitutional AI governance system.
-                    </p>
+                    <div key={heroSlide} className="space-y-8 animate-fade-in-up">
+                        <div className="inline-block px-3 py-1 text-xs font-mono border border-black/20 rounded-full uppercase tracking-wider">
+                            {slide.badge}
+                        </div>
+                        <h1 className="font-serif text-5xl md:text-7xl leading-[1.1] tracking-tight">
+                            {slide.title}
+                        </h1>
+                        <p className="text-xl md:text-2xl text-gray-600 max-w-2xl leading-relaxed">
+                            {slide.description}
+                        </p>
 
-                    {/* Stats */}
-                    <div className="flex flex-wrap gap-8 pt-4">
-                        <div>
-                            <div className="text-4xl font-bold tracking-tight">36</div>
-                            <div className="text-sm text-gray-500 font-medium">Vulnerabilities Fixed</div>
+                        {/* Stats */}
+                        <div className="flex flex-wrap gap-8 pt-4">
+                            {slide.stats.map((stat) => (
+                                <div key={stat.label}>
+                                    <div className={`text-4xl font-bold tracking-tight ${stat.green ? 'text-green-700' : ''}`}>{stat.value}</div>
+                                    <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
+                                </div>
+                            ))}
                         </div>
-                        <div>
-                            <div className="text-4xl font-bold tracking-tight">5</div>
-                            <div className="text-sm text-gray-500 font-medium">Hostile Audit Passes</div>
-                        </div>
-                        <div>
-                            <div className="text-4xl font-bold tracking-tight text-green-700">✓</div>
-                            <div className="text-sm text-gray-500 font-medium">Production Approved</div>
+
+                        <div className="pt-4 flex flex-wrap gap-4">
+                            {slide.primaryCta.to ? (
+                                <Link to={slide.primaryCta.to} className="px-6 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition-transform active:scale-95 text-center">
+                                    {slide.primaryCta.label}
+                                </Link>
+                            ) : (
+                                <a href={slide.primaryCta.href} className="px-6 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition-transform active:scale-95 text-center">
+                                    {slide.primaryCta.label}
+                                </a>
+                            )}
+                            {slide.secondaryCta.to ? (
+                                <Link to={slide.secondaryCta.to} className="px-6 py-3 border border-black/20 text-black rounded-lg font-medium hover:bg-black/5 transition-colors text-center">
+                                    {slide.secondaryCta.label}
+                                </Link>
+                            ) : (
+                                <a href={slide.secondaryCta.href} target={slide.secondaryCta.external ? '_blank' : undefined} rel={slide.secondaryCta.external ? 'noopener noreferrer' : undefined} className="px-6 py-3 border border-black/20 text-black rounded-lg font-medium hover:bg-black/5 transition-colors text-center">
+                                    {slide.secondaryCta.label}
+                                </a>
+                            )}
                         </div>
                     </div>
 
-                    <div className="pt-4 flex flex-wrap gap-4">
-                        <a href="#documents" className="px-6 py-3 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition-transform active:scale-95 text-center">
-                            View Evidence
-                        </a>
-                        <Link to="/verification" className="px-6 py-3 border border-black/20 text-black rounded-lg font-medium hover:bg-black/5 transition-colors text-center">
-                            Verify It Yourself
-                        </Link>
+                    {/* Slide indicators */}
+                    <div className="flex gap-2 pt-4">
+                        {heroSlides.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setHeroSlide(i)}
+                                className={`h-1.5 rounded-full transition-all duration-500 ${i === heroSlide ? 'w-10 bg-black' : 'w-6 bg-black/15 hover:bg-black/30'}`}
+                                aria-label={`Slide ${i + 1}`}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>
