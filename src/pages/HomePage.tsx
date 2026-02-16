@@ -100,18 +100,45 @@ export default function HomePage() {
 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
-                    <div className="md:hidden border-t border-black/5 bg-[#f5f2eb]/95 backdrop-blur-lg">
+                    <div className="md:hidden border-t border-black/5 bg-[#f5f2eb]/95 backdrop-blur-lg max-h-[80vh] overflow-y-auto">
                         <div className="px-6 py-4 space-y-1">
+                            {/* Page sections */}
                             <a href="#documents" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Documents</a>
                             <a href="#verification" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Verification</a>
                             <a href="#timeline" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Timeline</a>
                             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">About</a>
-                            <div className="pt-2 flex gap-3 text-xs font-mono uppercase tracking-wider">
+
+                            {/* Sitemap pages — organized by category */}
+                            <div className="pt-4 pb-2">
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Evidence Documents</div>
+                                <Link to="/audit/what-we-built" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">What We Built</Link>
+                                <Link to="/audit/report" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">ChatGPT Audit Report</Link>
+                                <Link to="/audit/threat-model" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Threat Model v1.0</Link>
+                                <Link to="/evidence/openclaw-governance" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">OpenClaw Governance Skill</Link>
+                            </div>
+                            <div className="pb-2">
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Legal & Licensing</div>
+                                <Link to="/license" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Humanitarian License v1.0.1</Link>
+                                <Link to="/privacy" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Privacy Policy</Link>
+                                <Link to="/terms" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Terms of Service</Link>
+                                <Link to="/cookie-policy" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Cookie Policy</Link>
+                            </div>
+                            <div className="pb-2 border-b border-black/5">
+                                <div className="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Learn & Verify</div>
+                                <Link to="/learn/constitutional-ai" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Understanding Constitutional AI</Link>
+                                <Link to="/verification" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Verification Guide</Link>
+                                <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">About AOS</Link>
+                            </div>
+
+                            {/* Ecosystem links */}
+                            <div className="pt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono uppercase tracking-wider">
                                 <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Constitution</a>
                                 <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Governance</a>
                                 <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Foundation</a>
+                                <a href="https://aos-license-checker.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">License Checker</a>
                             </div>
-                            <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="block mt-3 text-center py-3 bg-black text-white rounded-xl font-semibold text-sm hover:bg-gray-800 transition-colors">View on GitHub</a>
+
+                            <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 px-4 py-2 bg-black text-white rounded-md font-medium text-sm hover:bg-gray-800 transition-colors">View on GitHub</a>
                         </div>
                     </div>
                 )}
