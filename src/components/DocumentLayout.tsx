@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import SitemapDropdown from './SitemapDropdown';
 
 interface DocumentLayoutProps {
     title: string;
@@ -38,6 +39,8 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                         <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
                         <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
                         <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
+
+                        <SitemapDropdown />
 
                         <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-black text-white rounded-md hover:bg-gray-800 transition-colors text-sm">GitHub</a>
                     </div>
