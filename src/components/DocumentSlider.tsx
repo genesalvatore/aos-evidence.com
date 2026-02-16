@@ -23,6 +23,16 @@ const documents: DocumentItem[] = [
         category: 'Legal Framework',
     },
     {
+        icon: '🎓',
+        wordCount: '3,000 words',
+        title: 'Understanding Constitutional AI',
+        description:
+            'Beginner-friendly primer on constitutional AI governance. Core concepts, threat models, and verification methods explained in accessible language.',
+        meta: ['✓ Published Feb 15, 2026', '✓ Beginner-friendly'],
+        link: '/learn/constitutional-ai',
+        category: 'Educational Resources',
+    },
+    {
         icon: '📚',
         wordCount: '12,000 words',
         title: 'What We Built',
@@ -61,56 +71,6 @@ const documents: DocumentItem[] = [
         meta: ['✓ Independently verifiable', '✓ Falsifiable claims'],
         link: '/verification',
         category: 'Verification Guide',
-    },
-    {
-        icon: '🎯',
-        wordCount: 'Coming Soon',
-        title: 'Executive Summary',
-        description:
-            'Quick overview for decision-makers: Three AI organizations collaborated on the first production-grade constitutional AI system.',
-        meta: ['⏳ In development', '✓ Non-technical audience'],
-        link: '',
-        category: 'Executive Summary',
-    },
-    {
-        icon: '🤝',
-        wordCount: 'Coming Soon',
-        title: 'Three-Company Collaboration',
-        description:
-            'How Anthropic, OpenAI, and Google came together for the first AI-to-AI security audit. Documents the historic "First Contact" moment.',
-        meta: ['⏳ In development', '✓ Industry collaboration'],
-        link: '',
-        category: 'Collaboration Story',
-    },
-    {
-        icon: '🗺️',
-        wordCount: 'Coming Soon',
-        title: 'Development Timeline',
-        description:
-            'From Dec 31 inception to Feb 5 audit approval. See the full journey: 5 audit passes, 36 vulnerabilities found and fixed.',
-        meta: ['⏳ In development', '✓ Visual timeline'],
-        link: '',
-        category: 'Timeline & Context',
-    },
-    {
-        icon: '📊',
-        wordCount: 'Coming Soon',
-        title: 'Why This Matters',
-        description:
-            'Industry impact analysis: First production AI governance system, validated by external auditor. Sets new standard for transparent AI safety.',
-        meta: ['⏳ In development', '✓ Market analysis'],
-        link: '',
-        category: 'Impact & Significance',
-    },
-    {
-        icon: '🎓',
-        wordCount: 'Coming Soon',
-        title: 'Understanding Constitutional AI',
-        description:
-            'Educational primer on constitutional AI governance. Learn the core concepts, threat models, and verification methods in accessible language.',
-        meta: ['⏳ In development', '✓ Beginner-friendly'],
-        link: '',
-        category: 'Educational Resources',
     },
 ];
 
