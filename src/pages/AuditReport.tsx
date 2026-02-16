@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function AuditReport() {
     return (
         <DocumentLayout title="ChatGPT Audit Report">
+            <SEO title="ChatGPT Security Audit Report" description="Official ChatGPT security audit of AOS constitutional AI governance system. 11 security areas reviewed, 36 vulnerabilities fixed, production approved. First AI-to-AI security audit." path="/audit/report" type="article" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">ChatGPT Security Audit — Official Report</h1>
 
             <p><strong>Audit Partner:</strong> ChatGPT (OpenAI Model)<br /><strong>System Audited:</strong> AOS Constitutional Gate v1.0<br /><strong>Audit Date:</strong> February 5, 2026<br /><strong>Duration:</strong> Approximately 3 hours<br /><strong>Methodology:</strong> Hostile-auditor-level iterative security review<br /><strong>Final Status:</strong> ✅ <strong>PRODUCTION-APPROVED</strong></p>

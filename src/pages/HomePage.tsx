@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AchievementSlider from '../components/AchievementSlider';
 import DocumentSlider from '../components/DocumentSlider';
+import SEO from '../components/SEO';
 
 export default function HomePage() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
         <div className="min-h-screen bg-canvas font-sans text-[#111] selection:bg-black selection:text-white">
+            <SEO />
             {/* Navigation */}
             <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f5f2eb] backdrop-blur-md border-b border-black/5 shadow-sm">
                 <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">

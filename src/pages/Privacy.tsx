@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function Privacy() {
     return (
         <DocumentLayout title="Privacy Policy">
+            <SEO title="Privacy Policy" description="AOS Evidence Repository privacy policy. Self-hosted Matomo analytics, no third-party tracking, GDPR compliant. Privacy as a constitutional right." path="/privacy" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">Privacy Policy</h1>
 
             <p><strong>Effective Date:</strong> February 6, 2026<br /><strong>Last Updated:</strong> February 6, 2026</p>

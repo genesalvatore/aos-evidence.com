@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function About() {
     return (
         <DocumentLayout title="About AOS">
+            <SEO title="About AOS — Constitutional AI Governance" description="AOS (Agent Operating System) provides deterministic constitutional governance for AI. Founded by Eugene Christopher Salvatore. 137+ patent portfolio. Verifiable, transparent, production-ready AI safety." path="/about" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">About the AOS Evidence Repository</h1>
 
             <p>This repository exists to provide <strong>transparent, verifiable evidence</strong> of the AOS project's technical achievements, governance model, and intellectual property timeline.</p>

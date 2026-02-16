@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function Verification() {
     return (
         <DocumentLayout title="Verification Guide">
+            <SEO title="How to Verify AI Governance Evidence" description="Step-by-step guide to independently verify AOS constitutional AI governance claims. Git-based cryptographic verification, timeline auditing, and falsifiability testing." path="/verification" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">How to Verify This Evidence</h1>
 
             <p>This page explains <strong>how to independently verify</strong> every claim made in the AOS Evidence Repository. We designed this repository to be <strong>trustless</strong> — you don't need to trust us, you can verify everything yourself.</p>

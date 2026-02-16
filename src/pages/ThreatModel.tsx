@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function ThreatModel() {
     return (
         <DocumentLayout title="Threat Model v1.0">
+            <SEO title="AOS Constitutional Gate — Threat Model v1.0" description="Complete threat model for AI constitutional governance. 36 vulnerabilities cataloged across 5 hostile audit passes. Defense-in-depth architecture for deterministic AI safety enforcement." path="/audit/threat-model" type="article" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">AOS Constitutional Gate — Threat Model v1.0</h1>
 
             <p><strong>Version:</strong> 1.0<br /><strong>Date:</strong> February 6, 2026<br /><strong>Audit:</strong> ChatGPT (OpenAI), February 5, 2026<br /><strong>Status:</strong> 36 Vulnerabilities Found, 36 Fixed, Production-Approved</p>

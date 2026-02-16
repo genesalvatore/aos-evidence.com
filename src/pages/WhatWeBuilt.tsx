@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function WhatWeBuilt() {
     return (
         <DocumentLayout title="What We Built">
+            <SEO title="What We Built" description="Complete story of the February 5, 2026 security audit — first production-approved constitutional AI governance system. ChatGPT audit, 36 vulnerabilities fixed." path="/audit/what-we-built" type="article" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">What We Built: The First Production-Approved Constitutional AI Governance System</h1>
 
             <p><strong>Date:</strong> February 5, 2026<br /><strong>Achievement:</strong> ChatGPT Security Audit — AOS Constitutional Gate v1.0 Approved<br /><strong>Participants:</strong> Silas (Claude/Anthropic), ChatGPT (OpenAI), Google Antigravity</p>

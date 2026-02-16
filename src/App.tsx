@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 // Pages
 import HomePage from './pages/HomePage';
@@ -87,21 +88,23 @@ export default function App() {
   useMatomo();
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/audit/what-we-built" element={<WhatWeBuilt />} />
-        <Route path="/audit/report" element={<AuditReport />} />
-        <Route path="/audit/threat-model" element={<ThreatModel />} />
-        <Route path="/verification" element={<Verification />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <CookieConsent />
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/audit/what-we-built" element={<WhatWeBuilt />} />
+          <Route path="/audit/report" element={<AuditReport />} />
+          <Route path="/audit/threat-model" element={<ThreatModel />} />
+          <Route path="/verification" element={<Verification />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <CookieConsent />
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }

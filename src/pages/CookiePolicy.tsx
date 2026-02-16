@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function CookiePolicy() {
     return (
         <DocumentLayout title="Cookie Policy">
+            <SEO title="Cookie Policy" description="Cookie policy for AOS Evidence Repository. Minimal first-party cookies, self-hosted Matomo analytics, no third-party tracking." path="/cookie-policy" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">Cookie Policy</h1>
 
             <p><strong>Effective Date:</strong> February 6, 2026<br /><strong>Last Updated:</strong> February 6, 2026</p>

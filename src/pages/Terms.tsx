@@ -1,8 +1,10 @@
 import DocumentLayout from '../components/DocumentLayout';
+import SEO from '../components/SEO';
 
 export default function Terms() {
     return (
         <DocumentLayout title="Terms of Service">
+            <SEO title="Terms of Service" description="Terms of service for AOS Evidence Repository. CC BY 4.0 documentation license, AOS Humanitarian License for code, patent disclosures." path="/terms" />
             <h1 className="font-serif text-3xl md:text-4xl mb-6">Terms of Service</h1>
 
             <p><strong>Effective Date:</strong> February 6, 2026<br /><strong>Last Updated:</strong> February 6, 2026</p>
