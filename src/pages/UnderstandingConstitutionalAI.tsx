@@ -133,11 +133,11 @@ export default function UnderstandingConstitutionalAI() {
                 <div className="grid md:grid-cols-2 gap-4 my-6">
                     <div className="p-5 rounded-xl border border-red-200 bg-red-50">
                         <div className="text-lg font-bold text-red-900 mb-2">🚨 The Industry Standard</div>
-                        <p className="text-sm text-red-800">Like training a guard dog and <em>hoping</em> it won't bite the wrong person. The dog is trained to be good, but under the right circumstances, it might still attack.</p>
+                        <p className="text-sm text-red-800">Like asking someone to promise they won't open a safe full of valuables. They <em>probably</em> won't — but a clever enough argument might change their mind.</p>
                     </div>
                     <div className="p-5 rounded-xl border border-green-200 bg-green-50">
                         <div className="text-lg font-bold text-green-900 mb-2">✅ The AOS Approach</div>
-                        <p className="text-sm text-green-800">Like putting the dog on a leash attached to a locked post, with a human holding the key. The dog can be as aggressive as it wants — it physically <em>cannot</em> reach anyone.</p>
+                        <p className="text-sm text-green-800">Like changing the combination on the safe and only giving it to a separate security officer. No matter what anyone says, <em>only the officer can open it</em> — and only after verifying authorization.</p>
                     </div>
                 </div>
 
@@ -444,7 +444,7 @@ export default function UnderstandingConstitutionalAI() {
                     </div>
                     <div>
                         <h3 className="font-bold mb-2">What about Anthropic's "Constitutional AI"? Isn't that the same thing?</h3>
-                        <p className="text-gray-600 text-sm">Anthropic's Constitutional AI is a <em>training method</em> — it uses a constitution to guide RLHF training, making the AI more likely to follow rules. AOS's Constitutional Governance is an <em>enforcement mechanism</em> — it uses a gate to make rule violations architecturally impossible. The names are similar; the approaches are fundamentally different. Anthropic trains the dog; AOS builds the fence.</p>
+                        <p className="text-gray-600 text-sm">Anthropic's Constitutional AI is a <em>training method</em> — it uses a constitution to guide RLHF training, making the AI more likely to follow rules. AOS's Constitutional Governance is an <em>enforcement mechanism</em> — it uses a gate to make rule violations architecturally impossible. The names are similar; the approaches are fundamentally different. Anthropic persuades; AOS enforces.</p>
                     </div>
                     <div>
                         <h3 className="font-bold mb-2">Can the gate itself be hacked?</h3>
