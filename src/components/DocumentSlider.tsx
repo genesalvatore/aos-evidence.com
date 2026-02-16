@@ -53,6 +53,16 @@ const documents: DocumentItem[] = [
         category: 'Verification Guide',
     },
     {
+        icon: '⚖️',
+        wordCount: '3,500 words',
+        title: 'Humanitarian License v1.0.1',
+        description:
+            'The irrevocable open-source license restricting AI to peaceful civilian use. 40 prohibited categories, mandatory copyleft, patent notice, and audit requirements.',
+        meta: ['✓ Published Feb 1, 2026', '✓ Irrevocable restrictions'],
+        link: '/license',
+        category: 'Legal Framework',
+    },
+    {
         icon: '🎯',
         wordCount: 'Coming Soon',
         title: 'Executive Summary',
@@ -166,8 +176,8 @@ export default function DocumentSlider() {
                                         <div className="text-3xl">{doc.icon}</div>
                                         <span
                                             className={`text-xs font-mono px-2 py-1 rounded-full ${isComingSoon
-                                                    ? 'bg-amber-50 text-amber-600 border border-amber-200'
-                                                    : 'bg-gray-100 text-gray-500'
+                                                ? 'bg-amber-50 text-amber-600 border border-amber-200'
+                                                : 'bg-gray-100 text-gray-500'
                                                 }`}
                                         >
                                             {doc.wordCount}

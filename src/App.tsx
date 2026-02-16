@@ -12,6 +12,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import CookiePolicy from './pages/CookiePolicy';
+import HumanitarianLicense from './pages/HumanitarianLicense';
 import NotFound from './pages/NotFound';
 
 // ─── Matomo Analytics (Site ID: 15) ─────────────────────────────────────────
@@ -101,6 +102,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
+          <Route path="/license" element={<HumanitarianLicense />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
