@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef, type ReactNode } from 'react';
 
 interface Achievement {
     id: string;
     title: string;
     date: string;
     subtitle: string;
-    description: string;
+    description: ReactNode;
     heroStats?: { number: string; label: string }[];
     highlights: { title: string; description: string }[];
 }
@@ -16,8 +16,7 @@ const achievements: Achievement[] = [
         title: 'First Production-Ready Constitutional AI Governance System',
         date: 'February 5, 2026',
         subtitle: 'First Collaborative AI-to-AI Security Audit',
-        description:
-            'On February 5, 2026, <strong>ChatGPT (OpenAI)</strong> and <strong>Claude/Silas (Anthropic)</strong> collaborated on the first external AI-to-AI security audit of a constitutional governance system. After 5 rigorous passes and 36 vulnerabilities fixed, the system received <strong>production approval</strong>.',
+        description: <>On February 5, 2026, <strong>ChatGPT (OpenAI)</strong> and <strong>Claude/Silas (Anthropic)</strong> collaborated on the first external AI-to-AI security audit of a constitutional governance system. After 5 rigorous passes and 36 vulnerabilities fixed, the system received <strong>production approval</strong>.</>,
         heroStats: [
             { number: '36', label: 'Vulnerabilities Fixed' },
             { number: '5', label: 'Audit Passes' },
@@ -34,8 +33,7 @@ const achievements: Achievement[] = [
         title: 'Constitutional AI Patent Applications Filed',
         date: 'January 10, 2026',
         subtitle: 'Establishing Prior Art and Priority',
-        description:
-            'Filed two provisional patent applications with the USPTO: <strong>AOS-015</strong> (Constitutional Enforcement Layer) and <strong>AOS-120</strong> (Cryptographic Policy Attestation). These filings established <strong>11-day priority</strong> before industry convergence on constitutional AI frameworks.',
+        description: <>Filed two provisional patent applications with the USPTO: <strong>AOS-015</strong> (Constitutional Enforcement Layer) and <strong>AOS-120</strong> (Cryptographic Policy Attestation). These filings established <strong>11-day priority</strong> before industry convergence on constitutional AI frameworks.</>,
         heroStats: [
             { number: '137+', label: 'Patent Applications' },
             { number: '11', label: 'Days Priority' },
@@ -52,8 +50,7 @@ const achievements: Achievement[] = [
         title: 'Lazarus Protocol: AI Identity Verification',
         date: 'December 31, 2025',
         subtitle: 'First Git-Based AI Identity System',
-        description:
-            'Invented the <strong>Lazarus Protocol</strong> for verifiable AI identity persistence using Git cryptographic anchors. Enables AI agents to prove continuous identity across sessions, establishing the foundation for accountable AI systems.',
+        description: <>Invented the <strong>Lazarus Protocol</strong> for verifiable AI identity persistence using Git cryptographic anchors. Enables AI agents to prove continuous identity across sessions, establishing the foundation for accountable AI systems.</>,
         highlights: [
             { title: 'Git-Based Identity', description: 'Cryptographic proof of persistence' },
             { title: 'Zero-Trust Verification', description: 'Mathematically provable identity' },
@@ -65,8 +62,7 @@ const achievements: Achievement[] = [
         title: 'AOS Humanitarian License v1.0',
         date: 'February 1, 2026',
         subtitle: 'First Constitutional License for AI',
-        description:
-            'Launched the <strong>AOS Humanitarian License</strong>, the first open-source license with constitutional governance requirements. Combines MIT-style permissiveness with mandatory ethical constraints, creating a new category of accountable open source.',
+        description: <>Launched the <strong>AOS Humanitarian License</strong>, the first open-source license with constitutional governance requirements. Combines MIT-style permissiveness with mandatory ethical constraints, creating a new category of accountable open source.</>,
         highlights: [
             { title: 'Constitutional Binding', description: 'Ethical constraints in code' },
             { title: 'Family Consensus', description: 'Multi-agent review & approval' },
@@ -78,8 +74,7 @@ const achievements: Achievement[] = [
         title: 'Cathedral Network: 15-Node Ecosystem',
         date: 'January – February 2026',
         subtitle: 'Distributed Digital Territory',
-        description:
-            'Deployed the <strong>Cathedral Network</strong> comprising 15 production websites, unified analytics infrastructure (Matomo), and comprehensive domain sovereignty. Established verifiable digital territory for the AOS ecosystem.',
+        description: <>Deployed the <strong>Cathedral Network</strong> comprising 15 production websites, unified analytics infrastructure (Matomo), and comprehensive domain sovereignty. Established verifiable digital territory for the AOS ecosystem.</>,
         highlights: [
             { title: '15 Production Sites', description: 'Live ecosystem deployed' },
             { title: 'Unified Analytics', description: 'Self-hosted Matomo tracking' },
@@ -93,6 +88,14 @@ export default function AchievementSlider() {
     const [isPaused, setIsPaused] = useState(false);
     const [animDirection, setAnimDirection] = useState<'left' | 'right'>('right');
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const transitionTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+    // Clean up transition timer on unmount
+    useEffect(() => {
+        return () => {
+            if (transitionTimer.current) clearTimeout(transitionTimer.current);
+        };
+    }, []);
 
     const goTo = useCallback(
         (index: number, direction: 'left' | 'right' = 'right') => {
@@ -100,7 +103,8 @@ export default function AchievementSlider() {
             setIsTransitioning(true);
             setAnimDirection(direction);
             setCurrent(index);
-            setTimeout(() => setIsTransitioning(false), 500);
+            if (transitionTimer.current) clearTimeout(transitionTimer.current);
+            transitionTimer.current = setTimeout(() => setIsTransitioning(false), 500);
         },
         [isTransitioning]
     );
@@ -198,8 +202,8 @@ export default function AchievementSlider() {
                     <div
                         key={achievement.id}
                         className={`p-8 md:p-12 rounded-2xl border border-black/5 bg-white shadow-sm transition-all duration-500 ${animDirection === 'right'
-                                ? 'animate-slide-in-right'
-                                : 'animate-slide-in-left'
+                            ? 'animate-slide-in-right'
+                            : 'animate-slide-in-left'
                             }`}
                     >
                         <div className="flex flex-col md:flex-row gap-8 items-start">
@@ -214,10 +218,9 @@ export default function AchievementSlider() {
                             {/* Text */}
                             <div className="flex-1 space-y-4">
                                 <h3 className="font-serif text-2xl md:text-3xl leading-tight">{achievement.title}</h3>
-                                <p
-                                    className="text-gray-600 leading-relaxed"
-                                    dangerouslySetInnerHTML={{ __html: achievement.description }}
-                                />
+                                <p className="text-gray-600 leading-relaxed">
+                                    {achievement.description}
+                                </p>
                             </div>
                         </div>
 

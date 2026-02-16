@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
 // Pages
@@ -54,19 +54,25 @@ function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!localStorage.getItem(CONSENT_KEY)) {
+    try {
+      if (!localStorage.getItem(CONSENT_KEY)) {
+        const timer = setTimeout(() => setVisible(true), 1500);
+        return () => clearTimeout(timer);
+      }
+    } catch {
+      // localStorage unavailable (private browsing) — show banner anyway
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
   }, []);
 
   function accept() {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
+    try { localStorage.setItem(CONSENT_KEY, 'accepted'); } catch { /* private browsing */ }
     setVisible(false);
   }
 
   function decline() {
-    localStorage.setItem(CONSENT_KEY, 'declined');
+    try { localStorage.setItem(CONSENT_KEY, 'declined'); } catch { /* private browsing */ }
     setVisible(false);
   }
 
@@ -87,11 +93,13 @@ function CookieConsent() {
   );
 }
 
+
 // ─── Scroll to top on route change ──────────────────────────────────────────
 function ScrollToTop() {
+  const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
-  });
+  }, [pathname]);
   return null;
 }
 

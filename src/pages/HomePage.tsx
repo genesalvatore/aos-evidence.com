@@ -465,7 +465,7 @@ export default function HomePage() {
                             <Link to="/terms" className="hover:text-black transition-colors">Terms</Link>
                         </div>
                         <div className="text-xs text-gray-400 font-mono">
-                            Last updated: February 15, 2026
+                            Last updated: February 16, 2026
                         </div>
                     </div>
                 </div>
