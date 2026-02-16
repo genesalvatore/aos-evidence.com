@@ -15,6 +15,7 @@ import CookiePolicy from './pages/CookiePolicy';
 import HumanitarianLicense from './pages/HumanitarianLicense';
 import UnderstandingConstitutionalAI from './pages/UnderstandingConstitutionalAI';
 import OpenClawGovernance from './pages/OpenClawGovernance';
+import ErrorBoundary from './components/ErrorBoundary';
 import NotFound from './pages/NotFound';
 
 // ─── Matomo Analytics (Site ID: 15) ─────────────────────────────────────────
@@ -27,15 +28,22 @@ const EVIDENCE_SITE_ID = '15';
 
 function useMatomo() {
   useEffect(() => {
+    // Guard against double-init (React 19 StrictMode double-mounts in dev)
+    if ((window._paq as any)?.initialized) return;
     const _paq = (window._paq = window._paq || []);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     const u = `https://${MATOMO_SERVER}/`;
     _paq.push(['setTrackerUrl', u + 'matomo.php']);
     _paq.push(['setSiteId', EVIDENCE_SITE_ID]);
-    const d = document, g = d.createElement('script');
-    g.async = true; g.src = u + 'matomo.js';
-    d.head.appendChild(g);
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = u + 'matomo.js';
+    document.head.appendChild(script);
+    (window._paq as any).initialized = true;
+    return () => {
+      script.remove();
+    };
   }, []);
 }
 
@@ -47,7 +55,8 @@ function CookieConsent() {
 
   useEffect(() => {
     if (!localStorage.getItem(CONSENT_KEY)) {
-      setTimeout(() => setVisible(true), 1500);
+      const timer = setTimeout(() => setVisible(true), 1500);
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -91,26 +100,28 @@ export default function App() {
   useMatomo();
 
   return (
-    <HelmetProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/audit/what-we-built" element={<WhatWeBuilt />} />
-          <Route path="/audit/report" element={<AuditReport />} />
-          <Route path="/audit/threat-model" element={<ThreatModel />} />
-          <Route path="/verification" element={<Verification />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/cookie-policy" element={<CookiePolicy />} />
-          <Route path="/license" element={<HumanitarianLicense />} />
-          <Route path="/learn/constitutional-ai" element={<UnderstandingConstitutionalAI />} />
-          <Route path="/evidence/openclaw-governance" element={<OpenClawGovernance />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <CookieConsent />
-      </BrowserRouter>
-    </HelmetProvider>
+    <ErrorBoundary>
+      <HelmetProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/audit/what-we-built" element={<WhatWeBuilt />} />
+            <Route path="/audit/report" element={<AuditReport />} />
+            <Route path="/audit/threat-model" element={<ThreatModel />} />
+            <Route path="/verification" element={<Verification />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/license" element={<HumanitarianLicense />} />
+            <Route path="/learn/constitutional-ai" element={<UnderstandingConstitutionalAI />} />
+            <Route path="/evidence/openclaw-governance" element={<OpenClawGovernance />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <CookieConsent />
+        </BrowserRouter>
+      </HelmetProvider>
+    </ErrorBoundary>
   );
 }
