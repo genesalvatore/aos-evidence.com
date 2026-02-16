@@ -36,6 +36,18 @@ const heroSlides: {
             primaryCta: { label: 'Read the License', to: '/license' },
             secondaryCta: { label: 'View on GitHub', href: 'https://github.com/genesalvatore/aos-openclaw-constitutional/blob/main/LICENSE', external: true },
         },
+        {
+            badge: 'Vendor Agnostic',
+            title: <>Governance That Works<br /><span className="italic text-gray-500">With Any AI Platform.</span></>,
+            description: 'The AOS Constitutional Governance Skill for OpenClaw — published February 1, 2026. The first reference implementation proving deterministic governance integrates with real-world agentic infrastructure.',
+            stats: [
+                { value: '15', label: 'Public Commits' },
+                { value: 'Feb 1', label: 'Published Date' },
+                { value: '✓', label: 'Vendor Agnostic', green: true },
+            ],
+            primaryCta: { label: 'View Evidence', to: '/evidence/openclaw-governance' },
+            secondaryCta: { label: 'View Repository', href: 'https://github.com/genesalvatore/aos-openclaw-constitutional', external: true },
+        },
     ];
 
 export default function HomePage() {
@@ -311,6 +323,7 @@ export default function HomePage() {
                             { date: 'Dec 31, 2025', title: 'Initial Discovery', desc: 'Lazarus Protocol invented — first Git-based AI identity verification', highlight: false },
                             { date: 'Jan 10, 2026', title: 'Patent Applications Filed', desc: 'Provisional patents for constitutional AI governance (AOS-015, AOS-120)', highlight: true },
                             { date: 'Jan 21, 2026', title: 'Industry Convergence', desc: 'Anthropic, OpenAI, Google announce constitutional AI frameworks', highlight: false },
+                            { date: 'Feb 1, 2026', title: 'OpenClaw Governance Skill', desc: 'First constitutional governance integration for an open-source agentic platform — publicly published', highlight: true },
                             { date: 'Feb 5, 2026', title: 'ChatGPT Security Audit', desc: 'First AI-to-AI collaboration, 36 vulnerabilities fixed, production approved', highlight: true },
                             { date: 'Feb 6, 2026', title: 'Public Evidence Release', desc: 'Complete transparency — All evidence published and verifiable', highlight: true },
                         ].map((item, i) => (

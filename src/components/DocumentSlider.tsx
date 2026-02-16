@@ -33,6 +33,16 @@ const documents: DocumentItem[] = [
         category: 'Educational Resources',
     },
     {
+        icon: '🤝',
+        wordCount: '2,500 words',
+        title: 'OpenClaw Governance Skill',
+        description:
+            'Evidence record of the first constitutional governance integration for an open-source agentic platform. Vendor-agnostic. 15 public commits.',
+        meta: ['✓ Published Feb 1, 2026', '✓ Verifiable on GitHub'],
+        link: '/evidence/openclaw-governance',
+        category: 'Integration Evidence',
+    },
+    {
         icon: '📚',
         wordCount: '12,000 words',
         title: 'What We Built',

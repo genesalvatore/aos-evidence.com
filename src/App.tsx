@@ -14,6 +14,7 @@ import Terms from './pages/Terms';
 import CookiePolicy from './pages/CookiePolicy';
 import HumanitarianLicense from './pages/HumanitarianLicense';
 import UnderstandingConstitutionalAI from './pages/UnderstandingConstitutionalAI';
+import OpenClawGovernance from './pages/OpenClawGovernance';
 import NotFound from './pages/NotFound';
 
 // ─── Matomo Analytics (Site ID: 15) ─────────────────────────────────────────
@@ -105,6 +106,7 @@ export default function App() {
           <Route path="/cookie-policy" element={<CookiePolicy />} />
           <Route path="/license" element={<HumanitarianLicense />} />
           <Route path="/learn/constitutional-ai" element={<UnderstandingConstitutionalAI />} />
+          <Route path="/evidence/openclaw-governance" element={<OpenClawGovernance />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
