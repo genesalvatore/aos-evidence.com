@@ -142,6 +142,11 @@ export default function UnderstandingConstitutionalAI() {
                 </div>
 
                 <p>When AI systems can browse the web, write files, send emails, and execute code, the difference between "probably safe" and "provably safe" isn't academic — it's critical.</p>
+
+                <h3 className="text-lg font-semibold mt-8 mb-3">Why This Matters Right Now</h3>
+                <p>Autonomous AI agents — tools that can manage your email, browse the web, and execute tasks on your behalf — are growing rapidly. Open-source agentic platforms are being adopted by millions of users worldwide, paired with a variety of language models, and deployed across industries.</p>
+                <p className="mt-2">Security researchers have publicly raised concerns about the governance gaps in these tools: users can customize agent behavior with few constraints, and there are limited mechanisms to prevent misuse at scale. The question of <em>who governs the agent</em> is becoming as important as the question of <em>how capable the agent is</em>.</p>
+                <p className="mt-2">This is the problem constitutional AI governance was built to solve.</p>
             </section>
 
             <hr className="my-8 border-black/10" />
@@ -414,6 +419,10 @@ export default function UnderstandingConstitutionalAI() {
                         {
                             title: 'Patent-Protected, Not Just Licensed',
                             desc: 'AOS has 137+ provisional patent filings covering the governance framework. This means the enforcement mechanisms have IP protection, not just the code.',
+                        },
+                        {
+                            title: 'Already Integrated with Agentic Platforms',
+                            desc: 'On January 31, 2026, AOS published the first Constitutional Governance Skill for the OpenClaw agentic platform — publicly verifiable in the aos-openclaw-constitutional GitHub repository. This demonstrates that the governance framework works with real-world agent infrastructure, not just in theory.',
                         },
                     ].map((item) => (
                         <div key={item.title} className="flex gap-4 p-4 rounded-xl border border-gray-100 hover:border-black/20 transition-colors">
