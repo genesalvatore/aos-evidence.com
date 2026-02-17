@@ -29,7 +29,7 @@ export default function NotFound() {
             </div>
             <div className="mt-16 pt-8 border-t border-black/5">
                 <p className="text-xs text-gray-400 font-mono uppercase tracking-wider">AOS Evidence Repository</p>
-                <p className="text-xs text-gray-300 mt-1">© 2026 AOS Sovereign Nation</p>
+                <p className="text-xs text-gray-300 mt-1">© 2026 AOS Foundation</p>
             </div>
         </div>
     );

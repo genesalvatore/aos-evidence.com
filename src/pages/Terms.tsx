@@ -17,7 +17,7 @@ export default function Terms() {
             <hr className="my-8 border-black/10" />
 
             <h2 className="font-serif text-2xl mt-10 mb-4">2. Purpose of This Site</h2>
-            <p>This site serves as the <strong>official public evidence repository</strong> for the AOS Sovereign Nation. It provides:</p>
+            <p>This site serves as the <strong>official public evidence repository</strong> for the AOS Foundation. It provides:</p>
             <ul className="list-disc pl-6 space-y-1 mb-4">
                 <li>Technical documentation</li>
                 <li>Security audit reports</li>
@@ -97,7 +97,7 @@ export default function Terms() {
             <h2 className="font-serif text-2xl mt-10 mb-4">8. Intellectual Property</h2>
             <h3 className="text-lg font-semibold mt-6 mb-3">8.1 AOS Trademarks</h3>
             <ul className="list-disc pl-6 space-y-1 mb-4">
-                <li>"AOS Sovereign Nation"</li>
+                <li>"AOS Foundation"</li>
                 <li>"Constitutional AI"</li>
                 <li>"Cathedral Network"</li>
                 <li>AOS logos and emblems</li>

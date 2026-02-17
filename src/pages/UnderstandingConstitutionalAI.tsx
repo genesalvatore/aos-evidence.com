@@ -418,7 +418,7 @@ export default function UnderstandingConstitutionalAI() {
                         },
                         {
                             title: 'Patent-Protected, Not Just Licensed',
-                            desc: 'AOS has 137+ provisional patent filings covering the governance framework. This means the enforcement mechanisms have IP protection, not just the code.',
+                            desc: 'AOS has 143 provisional patent filings covering the governance framework. This means the enforcement mechanisms have IP protection, not just the code.',
                         },
                         {
                             title: 'Already Integrated with Agentic Platforms',

@@ -89,7 +89,7 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                     <div className="grid md:grid-cols-3 gap-12 mb-12">
                         <div>
                             <p className="font-serif text-xl mb-3">AOS Evidence</p>
-                            <p className="text-sm text-gray-500 leading-relaxed">Official evidence repository for the AOS Sovereign Nation. All materials published under verifiable cryptographic anchors.</p>
+                            <p className="text-sm text-gray-500 leading-relaxed">Official evidence repository for the AOS Foundation. All materials published under verifiable cryptographic anchors.</p>
                         </div>
                         <div>
                             <p className="text-xs font-mono uppercase tracking-wider text-gray-400 mb-4">Documentation</p>
@@ -109,7 +109,7 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                         </div>
                     </div>
                     <div className="pt-6 border-t border-black/5 flex flex-wrap justify-between gap-4 text-xs text-gray-400">
-                        <span>© 2026 AOS Sovereign Nation · CC BY 4.0</span>
+                        <span>© 2026 AOS Foundation · CC BY 4.0</span>
                         <span>Last updated: February 16, 2026</span>
                     </div>
                 </div>

@@ -490,7 +490,7 @@ export default function HomePage() {
 
                     <div className="border-t border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="text-xs text-gray-400">
-                            © 2026 AOS Sovereign Nation. Documentation: CC BY 4.0 ·{' '}
+                            © 2026 AOS Foundation. Documentation: CC BY 4.0 ·{' '}
                             <Link to="/privacy" className="hover:text-black transition-colors">Privacy</Link> ·{' '}
                             <Link to="/terms" className="hover:text-black transition-colors">Terms</Link>
                         </div>

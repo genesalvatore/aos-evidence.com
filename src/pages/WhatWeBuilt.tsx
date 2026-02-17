@@ -13,7 +13,7 @@ const WHAT_WE_BUILT_JSON_LD = [
         "dateModified": "2026-02-15",
         "author": {
             "@type": "Organization",
-            "name": "AOS Sovereign Nation",
+            "name": "AOS Foundation",
             "url": "https://aos-governance.com"
         },
         "publisher": {
@@ -141,7 +141,7 @@ export default function WhatWeBuilt() {
                 keywords="AI governance, AI constitution, constitutional AI, AI safety audit, ChatGPT security audit, deterministic AI governance, verifiable AI, AI compliance, autonomous agent governance, AI policy enforcement, AI regulation technology, AI accountability, cryptographic verification, AI transparency, RLHF alternative, AI alignment"
                 publishedTime="2026-02-05T00:00:00-05:00"
                 modifiedTime="2026-02-15T00:00:00-05:00"
-                author="AOS Sovereign Nation"
+                author="AOS Foundation"
                 section="AI Governance"
                 jsonLd={WHAT_WE_BUILT_JSON_LD}
             />
