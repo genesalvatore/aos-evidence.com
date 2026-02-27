@@ -36,9 +36,10 @@ function buildSEO() {
     // Only run processDir once on 'src' rather than multiple overlapping dirs
     processDir(path.join(process.cwd(), 'src'));
 
+    // IMPORTANT: Do NOT use display:none — crawlers like Perplexity skip it
     const payload = `
-    <div id="seo-fallback-content" style="display: none;" aria-hidden="true">
-      <h2>AOS Public Record & Verifiable Evidence</h2>
+    <div id="seo-fallback-content" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
+      <h2>AOS Public Record &amp; Verifiable Evidence</h2>
       <article>
         ${aggregateText.replace(/</g, '&lt;').replace(/>/g, '&gt;')}
       </article>
