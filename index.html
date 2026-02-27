@@ -149,7 +149,10 @@
       var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
       g.async = true; g.src = 'https://stats.greentreehosting.net/matomo.js'; s.parentNode.insertBefore(g, s);
     })();
-  </script>
+  <style>
+    /* Hide fallback content to prevent FOUC — crawlers still see it */
+    #root > header { display: none; }
+  </style>
 </head>
 
 <body>
