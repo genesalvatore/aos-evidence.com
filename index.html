@@ -150,6 +150,12 @@
       g.async = true; g.src = 'https://stats.greentreehosting.net/matomo.js'; s.parentNode.insertBefore(g, s);
     })();
   </script>
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    .js #root>header {
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body>
