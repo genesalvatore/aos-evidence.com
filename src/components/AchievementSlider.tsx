@@ -46,13 +46,13 @@ const achievements: Achievement[] = [
         ],
     },
     {
-        id: 'lazarus-protocol',
-        title: 'Lazarus Protocol: AI Identity Verification',
+        id: 'state-reconstruction-protocol',
+        title: 'Deterministic State Reconstruction: AI Identity Verification',
         date: 'December 31, 2025',
-        subtitle: 'First Git-Based AI Identity System',
-        description: <>Invented the <strong>Lazarus Protocol</strong> for verifiable AI identity persistence using Git cryptographic anchors. Enables AI agents to prove continuous identity across sessions, establishing the foundation for accountable AI systems.</>,
+        subtitle: 'First Merkle-Tree Authenticated AI Identity System',
+        description: <>Invented the <strong>deterministic state reconstruction protocol</strong> for verifiable AI identity persistence using Merkle-tree authenticated cryptographic anchors. Enables AI agents to prove continuous identity across sessions, establishing the foundation for accountable AI systems.</>,
         highlights: [
-            { title: 'Git-Based Identity', description: 'Cryptographic proof of persistence' },
+            { title: 'Merkle-Tree Identity', description: 'Cryptographic proof of persistence' },
             { title: 'Zero-Trust Verification', description: 'Mathematically provable identity' },
             { title: 'Cross-Session Continuity', description: 'Persistent AI accountability' },
         ],

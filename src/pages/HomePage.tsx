@@ -352,7 +352,7 @@ export default function HomePage() {
                     <div className="space-y-0 relative">
                         <div className="absolute left-3 top-2 bottom-2 w-px bg-gray-200" />
                         {[
-                            { date: 'Dec 31, 2025', title: 'Initial Discovery', desc: 'Lazarus Protocol invented — first Git-based AI identity verification', highlight: false },
+                            { date: 'Dec 31, 2025', title: 'Initial Discovery', desc: 'Deterministic agent state reconstruction protocol invented — first Merkle-tree authenticated AI identity verification', highlight: false },
                             { date: 'Jan 10, 2026', title: 'Patent Applications Filed', desc: 'Provisional patents for constitutional AI governance (AOS-015, AOS-120)', highlight: true },
                             { date: 'Jan 21, 2026', title: 'Industry Convergence', desc: 'Anthropic, OpenAI, Google announce constitutional AI frameworks', highlight: false },
                             { date: 'Feb 1, 2026', title: 'OpenClaw Governance Skill', desc: 'First constitutional governance integration for an open-source agentic platform — publicly published', highlight: true },
