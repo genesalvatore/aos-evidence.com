@@ -84,6 +84,7 @@ export default function HomePage() {
                         <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
                         <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
                         <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
+                        <a href="https://www.aos-core.com/patents" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Patents</a>
 
                         <SitemapDropdown />
 
@@ -135,6 +136,7 @@ export default function HomePage() {
                                 <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Constitution</a>
                                 <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Governance</a>
                                 <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Foundation</a>
+                                <a href="https://www.aos-core.com/patents" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Patents</a>
                                 <a href="https://aos-license-checker.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">License Checker</a>
                             </div>
 
@@ -438,6 +440,7 @@ export default function HomePage() {
                             { icon: '⚖️', title: 'Governance', desc: 'Verifiable governance standard', url: 'https://aos-governance.com' },
                             { icon: '🏛️', title: 'Foundation', desc: 'Verifiable AI safety for humanity', url: 'https://aos-foundation.com' },
                             { icon: '✓', title: 'License Checker', desc: 'Real-time compliance', url: 'https://aos-license-checker.com' },
+                            { icon: '📋', title: 'Patent Registry', desc: '99 AI governance patents', url: 'https://www.aos-core.com/patents' },
                             { icon: '📚', title: 'Git Legacy', desc: 'Multi-generational archives', url: 'https://git-legacy.com' },
                             { icon: '🏕️', title: 'Community', desc: 'Cathedral Network gathering', url: 'https://git-iscommunity.com' },
                             { icon: '🔍', title: 'HijackRadar', desc: 'Domain security monitoring', url: 'https://hijackradar.com' },
@@ -483,6 +486,7 @@ export default function HomePage() {
                             <div className="space-y-2">
                                 <Link to="/about" className="block text-sm text-gray-500 hover:text-black transition-colors">About</Link>
                                 <a href="https://github.com/genesalvatore/aos-evidence.com" className="block text-sm text-gray-500 hover:text-black transition-colors">GitHub Repository</a>
+                                <a href="https://www.aos-core.com/patents" className="block text-sm text-gray-500 hover:text-black transition-colors">Patent Registry</a>
                                 <a href="https://git-cathedral.com" className="block text-sm text-gray-500 hover:text-black transition-colors">Cathedral Network</a>
                             </div>
                         </div>
