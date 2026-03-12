@@ -9,6 +9,7 @@ const sitemapSections = [
             { label: 'ChatGPT Audit Report', to: '/audit/report', desc: 'Official security audit summary' },
             { label: 'Threat Model v1.0', to: '/audit/threat-model', desc: '36 vulnerabilities cataloged' },
             { label: 'OpenClaw Governance Skill', to: '/evidence/openclaw-governance', desc: 'First vendor-agnostic integration' },
+            { label: 'Architectural Review', to: '/evidence/architectural-review', desc: 'ChatGPT cross-platform validation' },
         ],
     },
     {

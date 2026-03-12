@@ -43,6 +43,16 @@ const documents: DocumentItem[] = [
         category: 'Integration Evidence',
     },
     {
+        icon: '🧠',
+        wordCount: '5 documents',
+        title: 'Cross-Platform Architectural Review',
+        description:
+            'A brand-new ChatGPT session analyzed the AOS ecosystem from zero context and produced five thesis documents concluding it represents a "constitutional AI civilization stack."',
+        meta: ['✓ March 11, 2026', '✓ Zero prior context'],
+        link: '/evidence/architectural-review',
+        category: 'Cross-Platform Validation',
+    },
+    {
         icon: '📚',
         wordCount: '12,000 words',
         title: 'What We Built',

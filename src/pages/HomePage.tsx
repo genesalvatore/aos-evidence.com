@@ -49,6 +49,18 @@ const heroSlides: {
             primaryCta: { label: 'View Evidence', to: '/evidence/openclaw-governance' },
             secondaryCta: { label: 'View Repository', href: 'https://github.com/genesalvatore/aos-openclaw-constitutional', external: true },
         },
+        {
+            badge: 'Cross-Platform Validation',
+            title: <>Independent Review.<br /><span className="italic text-gray-500">Architectural Recognition.</span></>,
+            description: 'A brand-new ChatGPT session analyzed the AOS ecosystem from zero context — websites, articles, and patents — and concluded it represents a "constitutional AI civilization stack."',
+            stats: [
+                { value: '5', label: 'Thesis Documents' },
+                { value: '0', label: 'Prior Context' },
+                { value: '✓', label: 'Cross-Platform', green: true },
+            ],
+            primaryCta: { label: 'Read the Review', to: '/evidence/architectural-review' },
+            secondaryCta: { label: 'View Evidence', to: '/evidence/openclaw-governance' },
+        },
     ];
 
 export default function HomePage() {
@@ -116,6 +128,7 @@ export default function HomePage() {
                                 <Link to="/audit/report" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">ChatGPT Audit Report</Link>
                                 <Link to="/audit/threat-model" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Threat Model v1.0</Link>
                                 <Link to="/evidence/openclaw-governance" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">OpenClaw Governance Skill</Link>
+                                <Link to="/evidence/architectural-review" onClick={() => setMobileMenuOpen(false)} className="block py-2 text-sm text-gray-500 hover:text-black transition-colors">Cross-Platform Architectural Review</Link>
                             </div>
                             <div className="pb-2">
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-gray-400 mb-2">Legal & Licensing</div>
@@ -358,6 +371,7 @@ export default function HomePage() {
                             { date: 'Feb 1, 2026', title: 'OpenClaw Governance Skill', desc: 'First constitutional governance integration for an open-source agentic platform — publicly published', highlight: true },
                             { date: 'Feb 5, 2026', title: 'ChatGPT Security Audit', desc: 'First AI-to-AI collaboration, 36 vulnerabilities fixed, production approved', highlight: true },
                             { date: 'Feb 6, 2026', title: 'Public Evidence Release', desc: 'Complete transparency — All evidence published and verifiable', highlight: true },
+                            { date: 'Mar 11, 2026', title: 'Cross-Platform Architectural Review', desc: 'ChatGPT independently validates AOS as "constitutional AI civilization stack" from zero prior context', highlight: true },
                         ].map((item, i) => (
                             <div key={i} className="relative pl-10 pb-10 last:pb-0">
                                 <div className={`absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 ${item.highlight ? 'bg-black border-black' : 'bg-white border-gray-300'}`} />
@@ -470,6 +484,8 @@ export default function HomePage() {
                                 <Link to="/audit/what-we-built" className="block text-sm text-gray-500 hover:text-black transition-colors">What We Built</Link>
                                 <Link to="/audit/report" className="block text-sm text-gray-500 hover:text-black transition-colors">ChatGPT Audit Report</Link>
                                 <Link to="/audit/threat-model" className="block text-sm text-gray-500 hover:text-black transition-colors">Threat Model v1.0</Link>
+                                <Link to="/evidence/openclaw-governance" className="block text-sm text-gray-500 hover:text-black transition-colors">OpenClaw Governance</Link>
+                                <Link to="/evidence/architectural-review" className="block text-sm text-gray-500 hover:text-black transition-colors">Architectural Review</Link>
                             </div>
                         </div>
                         <div>
