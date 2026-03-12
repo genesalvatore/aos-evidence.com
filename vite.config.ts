@@ -22,6 +22,7 @@ export default defineConfig({
         '/learn/constitutional-ai',
         '/evidence/openclaw-governance',
         '/evidence/architectural-review',
+        '/evidence/thesis-documents',
       ],
       renderer: new PuppeteerRenderer({
         renderAfterTime: 2000,

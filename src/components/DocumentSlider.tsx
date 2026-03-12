@@ -23,14 +23,14 @@ const documents: DocumentItem[] = [
         category: 'Legal Framework',
     },
     {
-        icon: '🎓',
-        wordCount: '3,000 words',
-        title: 'Understanding Constitutional AI',
+        icon: '🧠',
+        wordCount: '5 documents',
+        title: 'Cross-Platform Architectural Review',
         description:
-            'Beginner-friendly primer on constitutional AI governance. Core concepts, threat models, and verification methods explained in accessible language.',
-        meta: ['✓ Published Feb 15, 2026', '✓ Beginner-friendly'],
-        link: '/learn/constitutional-ai',
-        category: 'Educational Resources',
+            'A brand-new ChatGPT session analyzed the AOS ecosystem from zero context and produced five thesis documents concluding it represents a "constitutional AI civilization stack."',
+        meta: ['✓ March 11, 2026', '✓ Zero prior context'],
+        link: '/evidence/architectural-review',
+        category: 'Cross-Platform Validation',
     },
     {
         icon: '🤝',
@@ -43,16 +43,6 @@ const documents: DocumentItem[] = [
         category: 'Integration Evidence',
     },
     {
-        icon: '🧠',
-        wordCount: '5 documents',
-        title: 'Cross-Platform Architectural Review',
-        description:
-            'A brand-new ChatGPT session analyzed the AOS ecosystem from zero context and produced five thesis documents concluding it represents a "constitutional AI civilization stack."',
-        meta: ['✓ March 11, 2026', '✓ Zero prior context'],
-        link: '/evidence/architectural-review',
-        category: 'Cross-Platform Validation',
-    },
-    {
         icon: '📚',
         wordCount: '12,000 words',
         title: 'What We Built',
@@ -61,6 +51,16 @@ const documents: DocumentItem[] = [
         meta: ['✓ Patent-safe disclosure', '✓ Technical + accessible'],
         link: '/audit/what-we-built',
         category: 'Complete Story',
+    },
+    {
+        icon: '🎓',
+        wordCount: '3,000 words',
+        title: 'Understanding Constitutional AI',
+        description:
+            'Beginner-friendly primer on constitutional AI governance. Core concepts, threat models, and verification methods explained in accessible language.',
+        meta: ['✓ Published Feb 15, 2026', '✓ Beginner-friendly'],
+        link: '/learn/constitutional-ai',
+        category: 'Educational Resources',
     },
     {
         icon: '🔍',
@@ -114,9 +114,9 @@ export default function DocumentSlider() {
             <div className="max-w-6xl mx-auto px-6">
                 <div className="text-center space-y-4 mb-16">
                     <div className="text-xs font-mono uppercase tracking-wider text-gray-400">Evidence Documents</div>
-                    <h2 className="font-serif text-4xl md:text-5xl">ChatGPT Security Audit</h2>
+                    <h2 className="font-serif text-4xl md:text-5xl">Evidence Archive</h2>
                     <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-                        Complete, verifiable documentation — Published February 6, 2026
+                        Complete, verifiable documentation — Security audits, architectural reviews, and governance records
                     </p>
                 </div>
 

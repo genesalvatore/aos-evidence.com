@@ -16,6 +16,7 @@ import HumanitarianLicense from './pages/HumanitarianLicense';
 import UnderstandingConstitutionalAI from './pages/UnderstandingConstitutionalAI';
 import OpenClawGovernance from './pages/OpenClawGovernance';
 import ArchitecturalReview from './pages/ArchitecturalReview';
+import ThesisReader from './pages/ThesisReader';
 import ErrorBoundary from './components/ErrorBoundary';
 import NotFound from './pages/NotFound';
 
@@ -146,6 +147,7 @@ export default function App() {
             <Route path="/learn/constitutional-ai" element={<UnderstandingConstitutionalAI />} />
             <Route path="/evidence/openclaw-governance" element={<OpenClawGovernance />} />
             <Route path="/evidence/architectural-review" element={<ArchitecturalReview />} />
+            <Route path="/evidence/thesis-documents" element={<ThesisReader />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <CookieConsent />

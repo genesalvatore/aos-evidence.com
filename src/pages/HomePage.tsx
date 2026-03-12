@@ -59,7 +59,7 @@ const heroSlides: {
                 { value: '✓', label: 'Cross-Platform', green: true },
             ],
             primaryCta: { label: 'Read the Review', to: '/evidence/architectural-review' },
-            secondaryCta: { label: 'View Source Files', href: 'https://github.com/genesalvatore/aos-evidence.com/tree/main/chatgpt_architectural_thesis_mar_11_2026', external: true },
+            secondaryCta: { label: 'View Source Files', to: '/evidence/architectural-review' },
         },
     ];
 

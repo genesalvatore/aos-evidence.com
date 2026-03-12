@@ -229,14 +229,12 @@ export default function ArchitecturalReview() {
                                     </ul>
 
                                     <div className="mt-4 pt-3 border-t border-gray-100">
-                                        <a
-                                            href={doc.sourceFile}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                        <Link
+                                            to={`/evidence/thesis-documents?doc=${doc.id}`}
                                             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-black border border-black/20 rounded-lg hover:bg-black hover:text-white transition-colors"
                                         >
                                             Read Full Document →
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             )}
