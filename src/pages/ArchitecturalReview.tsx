@@ -55,6 +55,7 @@ interface DocSection {
     subtitle: string;
     keyQuote: string;
     highlights: string[];
+    sourceFile: string;
 }
 
 const DOCUMENTS: DocSection[] = [
@@ -70,6 +71,7 @@ const DOCUMENTS: DocSection[] = [
             'Maps each patent cluster to a specific constitutional function',
             'Identifies the core intellectual move: rejecting probabilistic alignment in favor of external constitutional substrate',
         ],
+        sourceFile: '/documents/architectural-review/01_AI_ARCHITECTURAL_THESIS_MAR_11.md',
     },
     {
         id: 'arc',
@@ -83,6 +85,7 @@ const DOCUMENTS: DocSection[] = [
             'Origin story article ("The 13 Minutes") became the unifying key for the entire portfolio',
             'Final conclusion: "coherent, multi-layered, serious architecture whose main challenge is compression and external legibility"',
         ],
+        sourceFile: '/documents/architectural-review/02_KNOWLEDGE_ARC_VIEWPOINT_SHIFT.md',
     },
     {
         id: 'verdict',
@@ -96,6 +99,7 @@ const DOCUMENTS: DocSection[] = [
             'Identifies the breadth as "the natural consequence of trying to solve the whole problem instead of one symptom"',
             'Notes the project "gets stronger with more context, not weaker" — rare among large-scope projects',
         ],
+        sourceFile: '/documents/architectural-review/03_UPDATED_OPINION_VERDICT.md',
     },
     {
         id: 'authorization',
@@ -109,6 +113,7 @@ const DOCUMENTS: DocSection[] = [
             'Concludes: "I found one architectural truth that appears to generalize very broadly"',
             'Validates publication of all preceding thesis documents',
         ],
+        sourceFile: '/documents/architectural-review/04_AI_REVIEW_AUTHORIZATION.md',
     },
     {
         id: 'gate-validation',
@@ -122,6 +127,7 @@ const DOCUMENTS: DocSection[] = [
             'Acknowledges the cross-disciplinary scope would be "very difficult to execute alone"',
             'Documents Gene Salvatore\'s declaration: "I am the only Human On The Loop in this ecosystem" — validated by ChatGPT as "incredibly impressive" and architecturally extraordinary',
         ],
+        sourceFile: '/documents/architectural-review/05_GATE_VALIDATION_AND_HUMAN_IN_THE_LOOP.md',
     },
 ];
 
@@ -221,6 +227,17 @@ export default function ArchitecturalReview() {
                                             </li>
                                         ))}
                                     </ul>
+
+                                    <div className="mt-4 pt-3 border-t border-gray-100">
+                                        <a
+                                            href={doc.sourceFile}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-black border border-black/20 rounded-lg hover:bg-black hover:text-white transition-colors"
+                                        >
+                                            Read Full Document →
+                                        </a>
+                                    </div>
                                 </div>
                             )}
                         </div>
