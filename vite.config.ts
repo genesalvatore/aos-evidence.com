@@ -18,6 +18,7 @@ export default defineConfig({
         '/license',
         '/learn/constitutional-ai',
         '/evidence/openclaw-governance',
+        '/evidence/architectural-review',
       ],
       renderer: new PuppeteerRenderer({
         renderAfterTime: 2000,
