@@ -51,20 +51,28 @@ function useMatomo() {
 const CONSENT_KEY = 'aosevidence_cookie_consent';
 
 function CookieConsent() {
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
+  // Gate 1: Skip during pre-rendering (prevents hydration mismatch)
   useEffect(() => {
+    if (typeof navigator !== 'undefined' && /HeadlessChrome|Prerender/i.test(navigator.userAgent)) return;
+    setMounted(true);
+  }, []);
+
+  // Gate 2: Only check localStorage after client mount
+  useEffect(() => {
+    if (!mounted) return;
     try {
       if (!localStorage.getItem(CONSENT_KEY)) {
         const timer = setTimeout(() => setVisible(true), 1500);
         return () => clearTimeout(timer);
       }
     } catch {
-      // localStorage unavailable (private browsing) — show banner anyway
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [mounted]);
 
   function accept() {
     try { localStorage.setItem(CONSENT_KEY, 'accepted'); } catch { /* private browsing */ }
@@ -76,7 +84,7 @@ function CookieConsent() {
     setVisible(false);
   }
 
-  if (!visible) return null;
+  if (!mounted || !visible) return null;
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[100] bg-gray-900 text-white px-6 py-5 shadow-2xl transform transition-transform duration-300">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
@@ -94,12 +102,23 @@ function CookieConsent() {
 }
 
 
-// ─── Scroll to top on route change ──────────────────────────────────────────
+// ─── Scroll Restoration ─────────────────────────────────────────────────────
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }, [pathname, hash]);
   return null;
 }
 

@@ -1,7 +1,31 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import prerender from '@prerenderer/rollup-plugin'
+import PuppeteerRenderer from '@prerenderer/renderer-puppeteer'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    prerender({
+      routes: [
+        '/',
+        '/audit/what-we-built',
+        '/audit/report',
+        '/audit/threat-model',
+        '/verification',
+        '/about',
+        '/license',
+        '/learn/constitutional-ai',
+        '/evidence/openclaw-governance',
+      ],
+      renderer: new PuppeteerRenderer({
+        renderAfterTime: 2000,
+        headless: true,
+      }),
+      rendererOptions: {
+        maxConcurrentRoutes: 1,
+      },
+    }),
+  ],
 })
