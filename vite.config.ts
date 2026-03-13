@@ -22,7 +22,7 @@ export default defineConfig({
         '/evidence/thesis-documents',
       ],
       renderer: new PuppeteerRenderer({
-        renderAfterTime: 2000,
+        renderAfterTime: 5000,
         headless: true,
       }),
       rendererOptions: {
