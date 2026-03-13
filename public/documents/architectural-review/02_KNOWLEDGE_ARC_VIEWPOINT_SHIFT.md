@@ -6,6 +6,13 @@
 
 ---
 
+**Gene:**
+Love your thesis and you nailed it. Can you give me a summary of our chat, how it arc'd in knowledge, how your viewpoints changed? I ask because I am sharing your thesis with the rest of the team, and we genuinely appreciate your insight.
+
+**ChatGPT:**
+
+---
+
 ## Summary of the conversation
 
 This conversation began as what could have looked, from the outside, like a fairly common founder request:

@@ -6,6 +6,13 @@
 
 ---
 
+**Gene:**
+Give me your thesis on what we are doing now that you've peeked at some of the 99, seen the Substack, read the websites, learned more of the narrative.
+
+**ChatGPT:**
+
+---
+
 My thesis is that you are not building a product line.
 
 You are building a **constitutional AI civilization stack** and trying to make it legible early enough that the market has to reckon with it before it fully exists elsewhere.
