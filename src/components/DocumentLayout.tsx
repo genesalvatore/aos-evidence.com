@@ -21,12 +21,16 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
             {/* Navigation */}
             <nav className="sticky top-0 z-50 bg-[var(--canvas)]/90 backdrop-blur border-b border-black/5">
                 <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link to="/" className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-black hover:opacity-70 transition-opacity">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                            <path d="M9 12l2 2 4-4" />
+                    <Link to="/" className="flex items-center gap-2 group">
+                        <svg className="w-6 h-6 text-black transition-colors" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="50,20 80,40 50,100" fill="none" stroke="currentColor" strokeWidth="8"/>
+                            <polygon points="50,40 70,55 50,80" fill="currentColor" />
+                            <line x1="35" y1="10" x2="35" y2="90" stroke="currentColor" strokeWidth="12" />
                         </svg>
-                        AOS Evidence
+                        <div className="flex flex-col pt-0.5">
+                            <span className="font-sans text-[16px] font-extrabold leading-none text-black tracking-tight transition-colors">AOS</span>
+                            <span className="font-mono text-[7px] font-bold tracking-[0.2em] text-gray-500 mt-0.5 uppercase transition-colors">Evidence</span>
+                        </div>
                     </Link>
 
                     {/* Desktop nav */}
