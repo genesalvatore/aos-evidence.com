@@ -209,9 +209,9 @@ export default function DocumentSlider() {
                     </p>
                     <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
                         {[
-                            { date: 'Feb 19', item: 'IP Transparency Page' },
-                            { date: 'Feb 22', item: 'Policy Gate Spec v1.0' },
-                            { date: 'Feb 22', item: 'Bypass Test Suite v1.0' },
+                            { date: 'May 19', item: 'IP Transparency Page' },
+                            { date: 'May 22', item: 'Policy Gate Spec v1.0' },
+                            { date: 'May 22', item: 'Bypass Test Suite v1.0' },
                         ].map((r) => (
                             <div key={r.item} className="flex items-center gap-3 p-3 bg-white rounded-lg">
                                 <span className="text-xs font-mono font-bold bg-black text-white px-2 py-1 rounded shrink-0">{r.date}</span>
