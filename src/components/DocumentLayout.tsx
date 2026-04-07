@@ -40,9 +40,9 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                         <Link to="/about" className="hover:text-black transition-colors">About</Link>
 
                         <div className="w-px h-4 bg-black/15 mx-1" />
-                        <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
-                        <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
-                        <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
+                        <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
+                        <a href="https://aos-governance.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
+                        <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
 
                         <SitemapDropdown />
 
@@ -67,9 +67,9 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                             <Link to="/verification" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Verification</Link>
                             <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">About</Link>
                             <div className="pt-2 flex gap-3 text-xs font-mono uppercase tracking-wider">
-                                <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Constitution</a>
-                                <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Governance</a>
-                                <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Foundation</a>
+                                <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black">Constitution</a>
+                                <a href="https://aos-governance.com" className="text-gray-400 hover:text-black">Governance</a>
+                                <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black">Foundation</a>
                             </div>
                             <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="block mt-3 text-center py-3 bg-black text-white rounded-xl font-semibold text-sm hover:bg-gray-800 transition-colors">GitHub</a>
                         </div>

@@ -103,10 +103,10 @@ export default function HomePage() {
 
                         {/* Quartet nav */}
                         <div className="w-px h-4 bg-black/15 mx-1" />
-                        <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
-                        <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
-                        <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
-                        <a href="https://aos-patents.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Patents</a>
+                        <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
+                        <a href="https://aos-governance.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
+                        <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
+                        <a href="https://aos-patents.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Patents</a>
 
                         <SitemapDropdown />
 
@@ -156,11 +156,11 @@ export default function HomePage() {
 
                             {/* Ecosystem links */}
                             <div className="pt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono uppercase tracking-wider">
-                                <a href="https://aos-constitution.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Constitution</a>
-                                <a href="https://aos-governance.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Governance</a>
-                                <a href="https://aos-foundation.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Foundation</a>
-                                <a href="https://aos-patents.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">Patents</a>
-                                <a href="https://aos-license-checker.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black">License Checker</a>
+                                <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black">Constitution</a>
+                                <a href="https://aos-governance.com" className="text-gray-400 hover:text-black">Governance</a>
+                                <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black">Foundation</a>
+                                <a href="https://aos-patents.com" className="text-gray-400 hover:text-black">Patents</a>
+                                <a href="https://aos-license-checker.com" className="text-gray-400 hover:text-black">License Checker</a>
                             </div>
 
                             <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 px-4 py-2 bg-black text-white rounded-md font-medium text-sm hover:bg-gray-800 transition-colors">View on GitHub</a>
