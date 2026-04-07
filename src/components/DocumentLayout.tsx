@@ -66,10 +66,15 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                             <Link to="/" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Home</Link>
                             <Link to="/verification" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Verification</Link>
                             <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">About</Link>
-                            <div className="pt-2 flex gap-3 text-xs font-mono uppercase tracking-wider">
-                                <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black">Constitution</a>
-                                <a href="https://aos-governance.com" className="text-gray-400 hover:text-black">Governance</a>
-                                <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black">Foundation</a>
+                            <div className="pt-3 mt-1 border-t border-black/10">
+                                <div className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-2">AOS Ecosystem</div>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <a href="https://aos-governance.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Governance</a>
+                                    <a href="https://aos-evidence.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Evidence</a>
+                                    <a href="https://aos-foundation.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Foundation</a>
+                                    <a href="https://aos-patents.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Patents</a>
+                                    <a href="https://aos-constitution.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors col-span-2">Constitution</a>
+                                </div>
                             </div>
                             <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="block mt-3 text-center py-3 bg-black text-white rounded-xl font-semibold text-sm hover:bg-gray-800 transition-colors">GitHub</a>
                         </div>

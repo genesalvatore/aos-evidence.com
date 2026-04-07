@@ -155,12 +155,16 @@ export default function HomePage() {
                             </div>
 
                             {/* Ecosystem links */}
-                            <div className="pt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-mono uppercase tracking-wider">
-                                <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black">Constitution</a>
-                                <a href="https://aos-governance.com" className="text-gray-400 hover:text-black">Governance</a>
-                                <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black">Foundation</a>
-                                <a href="https://aos-patents.com" className="text-gray-400 hover:text-black">Patents</a>
-                                <a href="https://aos-license-checker.com" className="text-gray-400 hover:text-black">License Checker</a>
+                            <div className="pt-3 mt-1 border-t border-black/10">
+                                <div className="text-[10px] font-mono uppercase tracking-wider text-gray-400 mb-2">AOS Ecosystem</div>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <a href="https://aos-governance.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Governance</a>
+                                    <a href="https://aos-evidence.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Evidence</a>
+                                    <a href="https://aos-foundation.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Foundation</a>
+                                    <a href="https://aos-patents.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Patents</a>
+                                    <a href="https://aos-constitution.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Constitution</a>
+                                    <a href="https://aos-license-checker.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">License Checker</a>
+                                </div>
                             </div>
 
                             <a href="https://github.com/genesalvatore/aos-evidence.com" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 px-4 py-2 bg-black text-white rounded-md font-medium text-sm hover:bg-gray-800 transition-colors">View on GitHub</a>
