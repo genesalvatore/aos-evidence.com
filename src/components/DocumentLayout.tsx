@@ -43,6 +43,7 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                         <a href="https://aos-constitution.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Constitution</a>
                         <a href="https://aos-governance.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
                         <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
+                        <a href="https://aos-gate.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Gate</a>
 
                         <SitemapDropdown />
 
@@ -73,6 +74,7 @@ export default function DocumentLayout({ title, children }: DocumentLayoutProps)
                                     <a href="https://aos-evidence.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Evidence</a>
                                     <a href="https://aos-foundation.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Foundation</a>
                                     <a href="https://aos-patents.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Patents</a>
+                                    <a href="https://aos-gate.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Gate</a>
                                     <a href="https://aos-constitution.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors col-span-2">Constitution</a>
                                 </div>
                             </div>

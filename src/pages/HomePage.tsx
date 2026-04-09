@@ -98,7 +98,6 @@ export default function HomePage() {
                     <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600 items-center">
                         <a href="#documents" className="hover:text-black transition-colors">Documents</a>
                         <a href="#verification" className="hover:text-black transition-colors">Verification</a>
-                        <a href="#timeline" className="hover:text-black transition-colors">Timeline</a>
                         <a href="#about" className="hover:text-black transition-colors">About</a>
 
                         {/* Quartet nav */}
@@ -107,6 +106,7 @@ export default function HomePage() {
                         <a href="https://aos-governance.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Governance</a>
                         <a href="https://aos-foundation.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Foundation</a>
                         <a href="https://aos-patents.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Patents</a>
+                        <a href="https://aos-gate.com" className="text-gray-400 hover:text-black transition-colors text-xs font-mono uppercase tracking-wider">Gate</a>
 
                         <SitemapDropdown />
 
@@ -128,7 +128,6 @@ export default function HomePage() {
                             {/* Page sections */}
                             <a href="#documents" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Documents</a>
                             <a href="#verification" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Verification</a>
-                            <a href="#timeline" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">Timeline</a>
                             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="block py-3 text-sm font-medium text-gray-700 hover:text-black transition-colors border-b border-black/5">About</a>
 
                             {/* Sitemap pages — organized by category */}
@@ -162,6 +161,7 @@ export default function HomePage() {
                                     <a href="https://aos-evidence.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Evidence</a>
                                     <a href="https://aos-foundation.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Foundation</a>
                                     <a href="https://aos-patents.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Patents</a>
+                                    <a href="https://aos-gate.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Gate</a>
                                     <a href="https://aos-constitution.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">Constitution</a>
                                     <a href="https://aos-license-checker.com" onClick={() => setMobileMenuOpen(false)} className="block py-2.5 px-3 text-sm font-medium text-gray-600 hover:text-black hover:bg-black/5 rounded-lg transition-colors">License Checker</a>
                                 </div>
