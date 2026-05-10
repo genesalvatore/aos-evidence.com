@@ -397,9 +397,9 @@ export default function HomePage() {
                     </div>
 
                     <div className="mt-16 p-8 rounded-xl border-2 border-black text-center">
-                        <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2">11 Days</div>
+                        <div className="text-4xl md:text-5xl font-bold tracking-tight mb-2">99 Patents</div>
                         <div className="text-gray-500 max-w-lg mx-auto">
-                            AOS filed patents 11 days before Anthropic published their probabilistic AI constitution
+                            AOS filed patents establishing the world's first deterministic AI governance architecture.
                         </div>
                     </div>
                 </div>
