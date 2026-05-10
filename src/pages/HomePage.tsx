@@ -379,7 +379,7 @@ export default function HomePage() {
                     <div className="space-y-0 relative">
                         <div className="absolute left-3 top-2 bottom-2 w-px bg-gray-200" />
                         {[
-                            { date: 'Dec 31, 2025', title: 'Initial Discovery', desc: 'Deterministic agent state reconstruction protocol invented — first Merkle-tree authenticated AI identity verification', highlight: false },
+                            { date: 'Dec 31, 2025', title: 'Initial Discovery', desc: 'Deterministic agent state reconstruction protocol invented — first tamper-evident AI identity verification', highlight: false },
                             { date: 'Jan 10, 2026', title: 'Patent Applications Filed', desc: 'Provisional patents for constitutional AI governance (AOS-015, AOS-120)', highlight: true },
                             { date: 'Jan 21, 2026', title: 'Industry Convergence', desc: 'Anthropic, OpenAI, Google announce constitutional AI frameworks', highlight: false },
                             { date: 'Feb 1, 2026', title: 'OpenClaw Governance Skill', desc: 'First constitutional governance integration for an open-source agentic platform — publicly published', highlight: true },
@@ -423,7 +423,7 @@ export default function HomePage() {
                         <div className="p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
                             <h3 className="font-bold text-lg mb-3">Key Innovation</h3>
                             <p className="text-gray-500 text-sm leading-relaxed">
-                                First system to combine <strong className="text-gray-900">cryptographic attestation</strong>, <strong className="text-gray-900">immutable audit trails</strong>, and <strong className="text-gray-900">OS-level enforcement</strong> to create verifiable AI governance. Together: defense-in-depth for AI safety.
+                                First system to combine <strong className="text-gray-900">tamper-evident verification</strong>, <strong className="text-gray-900">persistent audit trails</strong>, and <strong className="text-gray-900">enforcement-layer governance</strong> to create verifiable AI safety. Together: defense-in-depth for AI safety.
                             </p>
                         </div>
                         <div className="p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
