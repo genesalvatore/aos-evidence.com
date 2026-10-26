@@ -28,11 +28,27 @@ declare global {
 const MATOMO_SERVER = 'stats.greentreehosting.net';
 const EVIDENCE_SITE_ID = '15';
 
+// Privacy guard: never track on Global Privacy Control / Do Not Track or after "Decline".
+// Cookies are only allowed after the visitor explicitly accepts; otherwise tracking is cookieless.
+function analyticsAllowed(): boolean {
+  try {
+    const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
+    if (nav.globalPrivacyControl === true || navigator.doNotTrack === '1') return false;
+    if (localStorage.getItem(CONSENT_KEY) === 'declined') return false;
+  } catch { /* storage unavailable: fall through (cookieless tracking only) */ }
+  return true;
+}
+function cookiesAllowed(): boolean {
+  try { return localStorage.getItem(CONSENT_KEY) === 'accepted'; } catch { return false; }
+}
 function useMatomo() {
   useEffect(() => {
+    if (!analyticsAllowed()) return;
     // Guard against double-init (React 19 StrictMode double-mounts in dev)
     if ((window._paq as any)?.initialized) return;
     const _paq = (window._paq = window._paq || []);
+    if (!cookiesAllowed()) _paq.push(['disableCookies']);
+    _paq.push(['setDoNotTrack', true]);
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     const u = `https://${MATOMO_SERVER}/`;
@@ -78,11 +94,13 @@ function CookieConsent() {
 
   function accept() {
     try { localStorage.setItem(CONSENT_KEY, 'accepted'); } catch { /* private browsing */ }
+    (window._paq = window._paq || []).push(['forgetUserOptOut']);
     setVisible(false);
   }
 
   function decline() {
     try { localStorage.setItem(CONSENT_KEY, 'declined'); } catch { /* private browsing */ }
+    (window._paq = window._paq || []).push(['optUserOut']);
     setVisible(false);
   }
 
